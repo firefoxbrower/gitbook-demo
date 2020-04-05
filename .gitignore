@@ -1,14 +1,5 @@
-/target
-/.externalToolBuilders
-/*.log
-/.classpath
-/.project
-/.settings
-/*.db
-/bin
-/logs
-/.idea
 *~
+
 _book
 
 .DS_Store
