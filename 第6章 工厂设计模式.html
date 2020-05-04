@@ -1,0 +1,786 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第6章 工厂设计模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第7章 原型模式.html" />
+    
+    
+    <link rel="prev" href="第5章 单例设计模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第6章 工厂设计模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-6-&#x7AE0;-&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">&#x7B2C; 6 &#x7AE0; &#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h1>
+<h2 id="61-------&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">6.1       &#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h2>
+<h3 id="611-&#x770B;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x9700;&#x6C42;">6.1.1 &#x770B;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x9700;&#x6C42;</h3>
+<p>&#x770B;&#x4E00;&#x4E2A;&#x62AB;&#x8428;&#x7684;&#x9879;&#x76EE;&#xFF1A;&#x8981;&#x4FBF;&#x4E8E;&#x62AB;&#x8428;&#x79CD;&#x7C7B;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x8981;&#x4FBF;&#x4E8E;&#x7EF4;&#x62A4;</p>
+<p>1)    &#x62AB;&#x8428;&#x7684;&#x79CD;&#x7C7B;&#x5F88;&#x591A;(&#x6BD4;&#x5982; GreekPizz&#x3001;CheesePizz &#x7B49;)</p>
+<p>2)    &#x62AB;&#x8428;&#x7684;&#x5236;&#x4F5C;&#x6709; prepare&#xFF0C;bake, cut, box</p>
+<p>3)    &#x5B8C;&#x6210;&#x62AB;&#x8428;&#x5E97;&#x8BA2;&#x8D2D;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="612-&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B8C;&#x6210;">6.1.2 &#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B8C;&#x6210;</h3>
+<p>1)    &#x601D;&#x8DEF;&#x5206;&#x6790;(&#x7C7B;&#x56FE;)</p>
+<p><img src="images/&#x5DE5;&#x5382;&#x6A21;&#x5F0F;1.jpg" alt="img"></p>
+<p>&#x7F16;&#x5199; OrderPizza.java &#x53BB;&#x8BA2;&#x8D2D;&#x9700;&#x8981;&#x7684;&#x5404;&#x79CD; Pizza</p>
+<p>2)    &#x770B;&#x8001;&#x5E08;&#x4EE3;&#x7801;&#x7684;&#x6F14;&#x793A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrderPizza</span> </span>{
+    <span class="hljs-comment">// &#x6784;&#x9020;&#x5668;</span>
+<span class="hljs-comment">//    public OrderPizza() {</span>
+<span class="hljs-comment">//        Pizza pizza = null;</span>
+<span class="hljs-comment">//        String orderType; // &#x8BA2;&#x8D2D;&#x62AB;&#x8428;&#x7684;&#x7C7B;&#x578B;</span>
+<span class="hljs-comment">//        do {</span>
+<span class="hljs-comment">//            orderType = getType();</span>
+<span class="hljs-comment">//            if (orderType.equals(&quot;greek&quot;)) {</span>
+<span class="hljs-comment">//                pizza = new GreekPizza();</span>
+<span class="hljs-comment">//                pizza.setName(&quot; &#x5E0C;&#x814A;&#x62AB;&#x8428; &quot;);</span>
+<span class="hljs-comment">//            } else if (orderType.equals(&quot;cheese&quot;)) {</span>
+<span class="hljs-comment">//                pizza = new CheesePizza();</span>
+<span class="hljs-comment">//                pizza.setName(&quot; &#x5976;&#x916A;&#x62AB;&#x8428; &quot;);</span>
+<span class="hljs-comment">//            } else if (orderType.equals(&quot;pepper&quot;)) {</span>
+<span class="hljs-comment">//                pizza = new PepperPizza();</span>
+<span class="hljs-comment">//                pizza.setName(&quot;&#x80E1;&#x6912;&#x62AB;&#x8428;&quot;);</span>
+<span class="hljs-comment">//            } else {</span>
+<span class="hljs-comment">//                break;</span>
+<span class="hljs-comment">//            }</span>
+<span class="hljs-comment">//            //&#x8F93;&#x51FA;pizza &#x5236;&#x4F5C;&#x8FC7;&#x7A0B;</span>
+<span class="hljs-comment">//            pizza.prepare();</span>
+<span class="hljs-comment">//            pizza.bake();</span>
+<span class="hljs-comment">//            pizza.cut();</span>
+<span class="hljs-comment">//            pizza.box();</span>
+<span class="hljs-comment">//            </span>
+<span class="hljs-comment">//        } while (true);</span>
+<span class="hljs-comment">//    }</span>
+</code></pre>
+<h3 id="613-&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x4F18;&#x7F3A;&#x70B9;">6.1.3 &#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x4F18;&#x7F3A;&#x70B9;</h3>
+<p>1)    &#x4F18;&#x70B9;&#x662F;&#x6BD4;&#x8F83;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x7B80;&#x5355;&#x6613;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>2)    &#x7F3A;&#x70B9;&#x662F;&#x8FDD;&#x53CD;&#x4E86;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684; <strong>ocp</strong> &#x539F;&#x5219;&#xFF0C;&#x5373;&#x5BF9;&#x6269;&#x5C55;&#x5F00;&#x653E;&#xFF0C;&#x5BF9;&#x4FEE;&#x6539;&#x5173;&#x95ED;&#x3002;&#x5373;&#x5F53;&#x6211;&#x4EEC;&#x7ED9;&#x7C7B;&#x589E;&#x52A0;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C3D;&#x91CF;&#x4E0D;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#xFF0C;&#x6216;&#x8005;&#x5C3D;&#x53EF;&#x80FD;&#x5C11;&#x4FEE;&#x6539;&#x4EE3;&#x7801;.</p>
+<p>3)    </p>
+<p><img src="images/&#x5DE5;&#x5382;&#x6A21;&#x5F0F;2.jpg" alt="img"></p>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x8FD9;&#x65F6;&#x8981;&#x65B0;&#x589E;&#x52A0;&#x4E00;&#x4E2A; <strong>Pizza</strong> &#x7684;&#x79CD;&#x7C7B;<strong>(Pepper</strong> &#x62AB;&#x8428;<strong>)</strong>&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x5982;&#x4E0B;&#x4FEE;&#x6539;. &#x5982;&#x679C;&#x6211;&#x4EEC;&#x589E;&#x52A0;&#x4E00;&#x4E2A; Pizza &#x7C7B;&#xFF0C;&#x53EA;&#x8981;&#x662F;&#x8BA2;&#x8D2D; Pizza &#x7684;&#x4EE3;&#x7801;&#x90FD;&#x9700;&#x8981;&#x4FEE;&#x6539;.</p>
+<p>4)    &#x6539;&#x8FDB;&#x7684;&#x601D;&#x8DEF;&#x5206;&#x6790;</p>
+<p>&#x5206;&#x6790;&#xFF1A;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x5176;&#x5B83;&#x7684;&#x5730;&#x65B9;&#x4E5F;&#x6709;&#x521B;&#x5EFA; Pizza &#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x610F;&#x5473;&#x7740;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x800C;&#x521B;&#x5EFA; Pizza</p>
+<p>&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5F80;&#x5F80;&#x6709;&#x591A;&#x5904;&#x3002;</p>
+<p>&#x601D;&#x8DEF;&#xFF1A;&#x628A;&#x521B;&#x5EFA; <strong>Pizza</strong> &#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x5230;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x6709;&#x65B0;&#x7684; <strong>Pizza</strong> &#x79CD;&#x7C7B;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x8BE5;&#x7C7B;&#x5C31;&#x53EF;&#xFF0C;&#x5176;&#x5B83;&#x6709;&#x521B;&#x5EFA;&#x5230; Pizza</p>
+<p>&#x5BF9;&#x8C61;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E86;.-&gt; &#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</p>
+<h3 id="614-&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">6.1.4 &#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h3>
+<p>1)         &#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x662F;&#x5C5E;&#x4E8E;&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;&#xFF0C;&#x662F;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x4E00;&#x79CD;&#x3002;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x5BF9;&#x8C61;&#x51B3;&#x5B9A;&#x521B;&#x5EFA;&#x51FA;&#x54EA;&#x4E00;&#x79CD;&#x4EA7;&#x54C1;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x662F;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5BB6;&#x65CF;&#x4E2D;&#x6700;&#x7B80;&#x5355;&#x5B9E;&#x7528;&#x7684;&#x6A21;&#x5F0F;</p>
+<p>2)         &#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF1A;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#xFF0C;&#x7531;&#x8FD9;&#x4E2A;&#x7C7B;&#x6765;&#x5C01;&#x88C5;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;(&#x4EE3;&#x7801;)</p>
+<p>3)         &#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x4F1A;&#x7528;&#x5230;&#x5927;&#x91CF;&#x7684;&#x521B;&#x5EFA;&#x67D0;&#x79CD;&#x3001;&#x67D0;&#x7C7B;&#x6216;&#x8005;&#x67D0;&#x6279;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;.</p>
+<h3 id="615-&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">6.1.5 &#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h3>
+<p>1)    &#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;: &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5B9E;&#x4F8B;&#x5316; Pizaa &#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#xFF0C;&#x5C01;&#x88C5;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p> <img src="images/&#x5DE5;&#x5382;&#x6A21;&#x5F0F;3.jpg" alt="img"></p>
+<p>2)    &#x770B;&#x4EE3;&#x7801;&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.factory.simplefactory.pizzastore.order;
+
+<span class="hljs-keyword">import</span> com.atguigu.factory.simplefactory.pizzastore.pizza.CheesePizza;
+<span class="hljs-keyword">import</span> com.atguigu.factory.simplefactory.pizzastore.pizza.GreekPizza;
+<span class="hljs-keyword">import</span> com.atguigu.factory.simplefactory.pizzastore.pizza.PepperPizza;
+<span class="hljs-keyword">import</span> com.atguigu.factory.simplefactory.pizzastore.pizza.Pizza;
+
+<span class="hljs-comment">//&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x7C7B;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleFactory</span> </span>{
+
+    <span class="hljs-comment">//&#x66F4;&#x52A0;orderType &#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;Pizza &#x5BF9;&#x8C61;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Pizza <span class="hljs-title">createPizza</span><span class="hljs-params">(String orderType)</span> </span>{
+
+        Pizza pizza = <span class="hljs-keyword">null</span>;
+
+        System.out.println(<span class="hljs-string">&quot;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&quot;</span>);
+        <span class="hljs-keyword">if</span> (orderType.equals(<span class="hljs-string">&quot;greek&quot;</span>)) {
+            pizza = <span class="hljs-keyword">new</span> GreekPizza();
+            pizza.setName(<span class="hljs-string">&quot; &#x5E0C;&#x814A;&#x62AB;&#x8428; &quot;</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (orderType.equals(<span class="hljs-string">&quot;cheese&quot;</span>)) {
+            pizza = <span class="hljs-keyword">new</span> CheesePizza();
+            pizza.setName(<span class="hljs-string">&quot; &#x5976;&#x916A;&#x62AB;&#x8428; &quot;</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (orderType.equals(<span class="hljs-string">&quot;pepper&quot;</span>)) {
+            pizza = <span class="hljs-keyword">new</span> PepperPizza();
+            pizza.setName(<span class="hljs-string">&quot;&#x80E1;&#x6912;&#x62AB;&#x8428;&quot;</span>);
+        }
+
+        <span class="hljs-keyword">return</span> pizza;
+    }
+
+    <span class="hljs-comment">//&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F; &#x4E5F;&#x53EB; &#x9759;&#x6001;&#x5DE5;&#x5382;&#x6A21;&#x5F0F; </span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Pizza <span class="hljs-title">createPizza2</span><span class="hljs-params">(String orderType)</span> </span>{
+
+        Pizza pizza = <span class="hljs-keyword">null</span>;
+
+        System.out.println(<span class="hljs-string">&quot;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;2&quot;</span>);
+        <span class="hljs-keyword">if</span> (orderType.equals(<span class="hljs-string">&quot;greek&quot;</span>)) {
+            pizza = <span class="hljs-keyword">new</span> GreekPizza();
+            pizza.setName(<span class="hljs-string">&quot; &#x5E0C;&#x814A;&#x62AB;&#x8428; &quot;</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (orderType.equals(<span class="hljs-string">&quot;cheese&quot;</span>)) {
+            pizza = <span class="hljs-keyword">new</span> CheesePizza();
+            pizza.setName(<span class="hljs-string">&quot; &#x5976;&#x916A;&#x62AB;&#x8428; &quot;</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (orderType.equals(<span class="hljs-string">&quot;pepper&quot;</span>)) {
+            pizza = <span class="hljs-keyword">new</span> PepperPizza();
+            pizza.setName(<span class="hljs-string">&quot;&#x80E1;&#x6912;&#x62AB;&#x8428;&quot;</span>);
+        }
+        <span class="hljs-keyword">return</span> pizza;
+    }
+}
+</code></pre>
+<h2 id="62-------&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;">6.2       &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</h2>
+<h3 id="621-&#x770B;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x9700;&#x6C42;">6.2.1 &#x770B;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x9700;&#x6C42;</h3>
+<p>&#x62AB;&#x8428;&#x9879;&#x76EE;&#x65B0;&#x7684;&#x9700;&#x6C42;&#xFF1A;&#x5BA2;&#x6237;&#x5728;&#x70B9;&#x62AB;&#x8428;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x70B9;&#x4E0D;&#x540C;&#x53E3;&#x5473;&#x7684;&#x62AB;&#x8428;&#xFF0C;&#x6BD4;&#x5982; &#x5317;&#x4EAC;&#x7684;&#x5976;&#x916A; pizza&#x3001;&#x5317;&#x4EAC;&#x7684;&#x80E1;&#x6912; pizza &#x6216;&#x8005;&#x662F;&#x4F26;&#x6566;&#x7684;&#x5976;&#x916A; pizza&#x3001;&#x4F26;&#x6566;&#x7684;&#x80E1;&#x6912; pizza&#x3002;</p>
+<h3 id="622-&#x601D;&#x8DEF;-1">6.2.2 &#x601D;&#x8DEF; 1</h3>
+<p>&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x521B;&#x5EFA;&#x4E0D;&#x540C;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x6BD4;&#x5982; BJPizzaSimpleFactory&#x3001;LDPizzaSimpleFactory &#x7B49;&#x7B49;.&#x4ECE;&#x5F53;&#x524D;&#x8FD9;&#x4E2A;&#x6848;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x8003;&#x8651;&#x5230;&#x9879;&#x76EE;&#x7684;&#x89C4;&#x6A21;&#xFF0C;&#x4EE5;&#x53CA;&#x8F6F;&#x4EF6;&#x7684;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x3001;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x5E76;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x597D;</p>
+<h3 id="623-&#x601D;&#x8DEF;-2">6.2.3 &#x601D;&#x8DEF; 2</h3>
+<p>&#x4F7F;&#x7528;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</p>
+<h3 id="624-&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;">6.2.4 &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;</h3>
+<p>1)  &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#xFF1A;&#x5C06;&#x62AB;&#x8428;&#x9879;&#x76EE;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x529F;&#x80FD;&#x62BD;&#x8C61;&#x6210;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x53E3;&#x5473;&#x70B9;&#x9910;&#x5B50;&#x7C7B;&#x4E2D;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>2)  &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF1A;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x7531;&#x5B50;&#x7C7B;&#x51B3;&#x5B9A;&#x8981;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7C7B;&#x3002;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x63A8;&#x8FDF;&#x5230;&#x5B50;&#x7C7B;&#x3002;</p>
+<h3 id="625-&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x6848;&#x4F8B;">6.2.5 &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x6848;&#x4F8B;</h3>
+<p>1)  &#x62AB;&#x8428;&#x9879;&#x76EE;&#x65B0;&#x7684;&#x9700;&#x6C42;&#xFF1A;&#x5BA2;&#x6237;&#x5728;&#x70B9;&#x62AB;&#x8428;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x70B9;&#x4E0D;&#x540C;&#x53E3;&#x5473;&#x7684;&#x62AB;&#x8428;&#xFF0C;&#x6BD4;&#x5982; &#x5317;&#x4EAC;&#x7684;&#x5976;&#x916A; pizza&#x3001;&#x5317;&#x4EAC;&#x7684;&#x80E1;&#x6912; pizza &#x6216;&#x8005;&#x662F;&#x4F26;&#x6566;&#x7684;&#x5976;&#x916A; pizza&#x3001;&#x4F26;&#x6566;&#x7684;&#x80E1;&#x6912; pizza</p>
+<p>2)   </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><img src="images/&#x5DE5;&#x5382;&#x6A21;&#x5F0F;4.jpg" alt="img"></td>
+</tr>
+</tbody>
+</table>
+<p>&#x601D;&#x8DEF;&#x5206;&#x6790;&#x56FE;&#x89E3;</p>
+<p>3)  &#x770B;&#x8001;&#x5E08;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<p>  //OrderPizza.java  &#x7C7B;     package  com.atguigu.factory.factorymethod.pizzastore.order;     import java.io.BufferedReader; import java.io.IOException; import java.io.InputStreamReader;     import  com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;  </p>
+<p>&#x200B;                 public abstract class  OrderPizza {     //&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;createPizza ,   &#x8BA9;&#x5404;&#x4E2A;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;  abstract Pizza  createPizza(String orderType);     // &#x6784;&#x9020;&#x5668;  public OrderPizza() { Pizza pizza = null;  String orderType; // &#x8BA2;&#x8D2D;&#x62AB;&#x8428;&#x7684;&#x7C7B;&#x578B;  do {  orderType = getType();  pizza  = createPizza(orderType); //&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x7531;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x5B8C;&#x6210;  //&#x8F93;&#x51FA; pizza &#x5236;&#x4F5C;&#x8FC7;&#x7A0B;  pizza.prepare(); pizza.bake();  pizza.cut();  pizza.box();        } while (true);  }  </p>
+<table>
+<thead>
+<tr>
+<th>// &#x5199;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x5E0C;&#x671B;&#x8BA2;&#x8D2D;&#x7684;&#x62AB;&#x8428;&#x79CD;&#x7C7B;  private String getType() { try {  BufferedReader strin = new BufferedReader(new  InputStreamReader(System.in)); System.out.println(&quot;input pizza &#x79CD;&#x7C7B;:&quot;);  String str = strin.readLine();  return str;  } catch (IOException e) { e.printStackTrace();  return &quot;&quot;;  }  }        }</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>package  com.atguigu.factory.factorymethod.pizzastore.order;        import com.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza;  import com.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza;  import com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;           public class <strong>BJOrderPizza</strong> extends  OrderPizza {</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>@Override  Pizza createPizza(String  orderType) {        Pizza pizza = null; if(orderType.equals(&quot;cheese&quot;)) {  pizza = new BJCheesePizza();  } else if (orderType.equals(&quot;pepper&quot;)) { pizza = new BJPepperPizza();  }  // TODO Auto-generated method stub return pizza;  }        }</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>package  com.atguigu.factory.factorymethod.pizzastore.order;        import  com.atguigu.factory.factorymethod.pizzastore.pizza.BJCheesePizza; import  com.atguigu.factory.factorymethod.pizzastore.pizza.BJPepperPizza; import com.atguigu.factory.factorymethod.pizzastore.pizza.LDCheesePizza;  import com.atguigu.factory.factorymethod.pizzastore.pizza.LDPepperPizza;  import com.atguigu.factory.factorymethod.pizzastore.pizza.Pizza;           public class LDOrderPizza extends OrderPizza {</td>
+</tr>
+</tbody>
+</table>
+<p>&#x200B;        @Override  Pizza createPizza(String  orderType) {        Pizza pizza = null; if(orderType.equals(&quot;cheese&quot;)) {  pizza = new LDCheesePizza();  } else if (orderType.equals(&quot;pepper&quot;)) { pizza = new LDPepperPizza();  }  // TODO Auto-generated method stub return pizza;  }        }  </p>
+<h2 id="63-------&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;">6.3       &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</h2>
+<h3 id="631-&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">6.3.1 &#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h3>
+<p>1)    &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF1A;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; <strong>interface</strong> &#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x76F8;&#x5173;&#x6216;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x5BF9;&#x8C61;&#x7C07;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x6307;&#x660E;&#x5177;&#x4F53;&#x7684;&#x7C7B;</p>
+<p>2)    &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x5C06;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x548C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x6574;&#x5408;&#x3002;</p>
+<p>3)    &#x4ECE;&#x8BBE;&#x8BA1;&#x5C42;&#x9762;&#x770B;&#xFF0C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5C31;&#x662F;&#x5BF9;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x6539;&#x8FDB;(&#x6216;&#x8005;&#x79F0;&#x4E3A;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x62BD;&#x8C61;)&#x3002;</p>
+<p>4)    &#x5C06;&#x5DE5;&#x5382;&#x62BD;&#x8C61;&#x6210;&#x4E24;&#x5C42;&#xFF0C;<strong>AbsFactory(</strong>&#x62BD;&#x8C61;&#x5DE5;&#x5382;<strong>)</strong> &#x548C; &#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x7684;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x3002;&#x7A0B;&#x5E8F;&#x5458;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x3002;&#x8FD9;&#x6837;&#x5C06;&#x5355;&#x4E2A;&#x7684;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x7C7B;&#x53D8;&#x6210;&#x4E86;&#x5DE5;&#x5382;&#x7C07;&#xFF0C;&#x66F4;&#x5229;&#x4E8E;&#x4EE3;&#x7801;&#x7684;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x3002;</p>
+<p>5)    &#x7C7B;&#x56FE;</p>
+<p><img src="images/&#x5DE5;&#x5382;&#x6A21;&#x5F0F;5.jpg" alt="img"></p>
+<h3 id="632-&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;">6.3.2 &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;</h3>
+<p>&#x4F7F;&#x7528;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6765;&#x5B8C;&#x6210;&#x62AB;&#x8428;&#x9879;&#x76EE;.</p>
+<p>  package  com.atguigu.factory.absfactory.pizzastore.order;        import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;     //&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x62BD;&#x8C61;&#x5C42;(&#x63A5;&#x53E3;) public interface AbsFactory {  //&#x8BA9;&#x4E0B;&#x9762;&#x7684;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x6765; &#x5177;&#x4F53;&#x5B9E;&#x73B0;  public Pizza  createPizza(String orderType);  }  </p>
+<table>
+<thead>
+<tr>
+<th>package  com.atguigu.factory.absfactory.pizzastore.order;        import com.atguigu.factory.absfactory.pizzastore.pizza.BJCheesePizza;  import com.atguigu.factory.absfactory.pizzastore.pizza.BJPepperPizza;  import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;     //&#x8FD9;&#x662F;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;  public class BJFactory implements AbsFactory {        @Override  public Pizza  createPizza(String orderType) {  System.out.println(&quot;~&#x4F7F;&#x7528;&#x7684;&#x662F;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;~&quot;);  // TODO Auto-generated method stub Pizza pizza = null;  if(orderType.equals(&quot;cheese&quot;)) {  pizza = new BJCheesePizza();  } else if (orderType.equals(&quot;pepper&quot;)){  pizza = new BJPepperPizza();  }  return pizza;  }        }</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>package  com.atguigu.factory.absfactory.pizzastore.order;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>import com.atguigu.factory.absfactory.pizzastore.pizza.LDCheesePizza;  import com.atguigu.factory.absfactory.pizzastore.pizza.LDPepperPizza;  import com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;           public class LDFactory  implements AbsFactory {        @Override  public Pizza  createPizza(String orderType) {  System.out.println(&quot;~&#x4F7F;&#x7528;&#x7684;&#x662F;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;~&quot;); Pizza pizza = null;  if (orderType.equals(&quot;cheese&quot;)) { pizza =  new LDCheesePizza();  } else if (orderType.equals(&quot;pepper&quot;)) { pizza = new LDPepperPizza();  }  return pizza;  }        }</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//OrderPizza.java  package com.atguigu.factory.absfactory.pizzastore.order;        import  java.io.BufferedReader;</td>
+</tr>
+</tbody>
+</table>
+<p>  import java.io.IOException; import java.io.InputStreamReader;     import  com.atguigu.factory.absfactory.pizzastore.pizza.Pizza;        public class OrderPizza {        AbsFactory factory;     // &#x6784;&#x9020;&#x5668;  public OrderPizza(AbsFactory factory) {  setFactory(factory);  }        private void setFactory(AbsFactory factory) { Pizza  pizza = null;  String orderType = &quot;&quot;; // &#x7528;&#x6237;&#x8F93;&#x5165;  this.factory = factory; do {  orderType = getType();  // factory &#x53EF;&#x80FD;&#x662F;&#x5317;&#x4EAC;&#x7684;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x4F26;&#x6566;&#x7684;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;  pizza = factory.createPizza(orderType); if (pizza != null) { // &#x8BA2; &#x8D2D; ok  pizza.prepare();  pizza.bake();  pizza.cut();  </p>
+<p>  pizza.box();  } else {  System.out.println(&quot;&#x8BA2;&#x8D2D;&#x5931;&#x8D25;&quot;); break;  }  } while (true);  }     // &#x5199;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x5E0C;&#x671B;&#x8BA2;&#x8D2D;&#x7684;&#x62AB;&#x8428;&#x79CD;&#x7C7B;  private String getType() { try {  BufferedReader strin = new BufferedReader(new  InputStreamReader(System.in)); System.out.println(&quot;input pizza &#x79CD;&#x7C7B;:&quot;);  String str = strin.readLine();  return str;  } catch (IOException e) { e.printStackTrace();  return &quot;&quot;;  }  }  }  </p>
+<h2 id="64-------&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5728;-jdk-calendar-&#x5E94;&#x7528;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;">6.4       &#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5728; JDK-Calendar &#x5E94;&#x7528;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p>1)    JDK &#x4E2D;&#x7684; Calendar &#x7C7B;&#x4E2D;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x4E86;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</p>
+<p>2)    &#x6E90;&#x7801;&#x5206;&#x6790;+Debug &#x6E90;&#x7801;+&#x8BF4;&#x660E;</p>
+<p>&#xD8; &#x6E90;&#x7801;&#x90E8;&#x5206;</p>
+<table>
+<thead>
+<tr>
+<th>package com.atguigu.jdk;     import java.util.Calendar;     public class Factory {     public static void  main(String[] args) {  // TODO Auto-generated  method stub  // getInstance &#x662F; Calendar &#x9759;&#x6001;&#x65B9;&#x6CD5;  Calendar cal = <strong>Calendar.getInstance</strong>();  // &#x6CE8;&#x610F;&#x6708;&#x4EFD;&#x4E0B;&#x6807;&#x4ECE; 0 &#x5F00;&#x59CB;&#xFF0C;&#x6240;&#x4EE5;&#x53D6;&#x6708;&#x4EFD;&#x8981;+1  System.out.println(&quot;&#x5E74;:&quot; + cal.get(Calendar.YEAR));  System.out.println(&quot; &#x6708; :&quot; + (cal.get(Calendar.MONTH)  + 1)); System.out.println(&quot;&#x65E5;:&quot; +  cal.get(Calendar.DAY_OF_MONTH));  System.out.println(&quot;&#x65F6;:&quot; + cal.get(Calendar.HOUR_OF_DAY));  System.out.println(&quot;&#x5206;:&quot; + cal.get(Calendar.MINUTE));  System.out.println(&quot;&#x79D2;:&quot; + cal.get(Calendar.SECOND));     }     }</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>//Calendar.java</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>public static Calendar  getInstance()  {  return  createCalendar(TimeZone.getDefault(),  Locale.getDefault(Locale.Category.FORMAT));  }</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private static Calendar createCalendar(TimeZone  zone,  Locale aLocale) //&#x6839;&#x636E; TimeZone zone, locale &#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x4F8B;  {  CalendarProvider provider =  LocaleProviderAdapter.getAdapter(CalendarProvider.class, aLocale)  .getCalendarProvider();  if (provider != null) { try {  return provider.getInstance(zone, aLocale);  } catch  (IllegalArgumentException iae) {  // fall back to the  default instantiation  }  }        Calendar cal = null;        if  (aLocale.hasExtensions()) {  String caltype  = aLocale.getUnicodeLocaleType(&quot;ca&quot;); if (caltype != null) {</td>
+</tr>
+</tbody>
+</table>
+<p>  switch (caltype) { case &quot;buddhist&quot;:  cal = <strong>new  BuddhistCalendar(zone, aLocale);</strong>  break;  case &quot;japanese&quot;:  cal = <strong>new JapaneseImperialCalendar(zone, aLocale);</strong>  break; case &quot;gregory&quot;:  cal = <strong>new  GregorianCalendar(zone, aLocale);</strong>  break;  }  }  }  if (cal == null) {  // If no known calendar  type is explicitly specified,  // perform the traditional  way to create a Calendar:  // create a  BuddhistCalendar for th_TH locale,  // a  JapaneseImperialCalendar for ja_JP_JP locale, or  // a GregorianCalendar for  any other locales.  // NOTE: The language,  country and variant strings are interned.  if (aLocale.getLanguage() == &quot;th&quot;  &amp;&amp; aLocale.getCountry() == &quot;TH&quot;) { cal = new  BuddhistCalendar(zone, aLocale);  } else if (aLocale.getVariant() == &quot;JP&quot;  &amp;&amp; aLocale.getLanguage() == &quot;ja&quot; &amp;&amp;  aLocale.getCountry() == &quot;JP&quot;) {  cal = new JapaneseImperialCalendar(zone, aLocale);  } else {  </p>
+<p>  cal = new  GregorianCalendar(zone, aLocale);  }  }  return cal;  }  </p>
+<h2 id="65-------&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5C0F;&#x7ED3;">6.5       &#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5C0F;&#x7ED3;</h2>
+<p>1)    &#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x610F;&#x4E49;</p>
+<p>&#x5C06;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x7684;&#x4EE3;&#x7801;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF0C;&#x653E;&#x5230;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x548C;&#x7EF4;&#x62A4;&#xFF0C;&#x8FBE;&#x5230;&#x548C;&#x4E3B;&#x9879;&#x76EE;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x89E3;&#x8026;&#x3002;&#x4ECE;&#x800C;&#x63D0;&#x9AD8;&#x9879;&#x76EE;&#x7684;&#x6269;&#x5C55;&#x548C;&#x7EF4;&#x62A4;&#x6027;&#x3002;</p>
+<p>2)    &#x4E09;&#x79CD;&#x5DE5;&#x5382;&#x6A21;&#x5F0F; (&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;)</p>
+<p>3)    &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x4F9D;&#x8D56;&#x62BD;&#x8C61;&#x539F;&#x5219;</p>
+<p>&#xD8; &#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x76F4;&#x63A5; new &#x7C7B;, &#x800C;&#x662F;&#x628A;&#x8FD9;&#x4E2A; new &#x7C7B;&#x7684;&#x52A8;&#x4F5C;&#x653E;&#x5728;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x3002;&#x6709;&#x7684;&#x4E66;&#x4E0A;&#x8BF4;&#xFF0C; &#x53D8;&#x91CF;&#x4E0D;&#x8981;&#x76F4;&#x63A5;&#x6301;&#x6709;&#x5177;&#x4F53;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<p>&#xD8; &#x4E0D;&#x8981;&#x8BA9;&#x7C7B;&#x7EE7;&#x627F;&#x5177;&#x4F53;&#x7C7B;&#xFF0C;&#x800C;&#x662F;&#x7EE7;&#x627F;&#x62BD;&#x8C61;&#x7C7B;&#x6216;&#x8005;&#x662F;&#x5B9E;&#x73B0; interface(&#x63A5;&#x53E3;)</p>
+<p>&#xD8; &#x4E0D;&#x8981;&#x8986;&#x76D6;&#x57FA;&#x7C7B;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第5章 单例设计模式.html" class="navigation navigation-prev " aria-label="Previous page: 第5章 单例设计模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第7章 原型模式.html" class="navigation navigation-next " aria-label="Next page: 第7章 原型模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第6章 工厂设计模式","level":"1.6","depth":1,"next":{"title":"第7章 原型模式","level":"1.7","depth":1,"path":"第7章 原型模式.md","ref":"第7章 原型模式.md","articles":[]},"previous":{"title":"第5章 单例设计模式","level":"1.5","depth":1,"path":"第5章 单例设计模式.md","ref":"第5章 单例设计模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第6章 工厂设计模式.md","mtime":"2020-04-11T14:47:50.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

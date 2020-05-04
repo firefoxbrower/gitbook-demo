@@ -1,0 +1,824 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第5章 单例设计模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第6章 工厂设计模式.html" />
+    
+    
+    <link rel="prev" href="第4章 设计模式概述.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第5章 单例设计模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-5-&#x7AE0;-&#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;">&#x7B2C; 5 &#x7AE0; &#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</h1>
+<h2 id="51-------&#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;">5.1       &#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4ECB;&#x7ECD;</h2>
+<p>&#x6240;&#x8C13;&#x7C7B;&#x7684;&#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5C31;&#x662F;&#x91C7;&#x53D6;&#x4E00;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x4FDD;&#x8BC1;&#x5728;&#x6574;&#x4E2A;&#x7684;&#x8F6F;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5BF9;&#x67D0;&#x4E2A;&#x7C7B;&#x53EA;&#x80FD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF0C; &#x5E76;&#x4E14;&#x8BE5;&#x7C7B;&#x53EA;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x53D6;&#x5F97;&#x5176;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x7684;&#x65B9;&#x6CD5;(&#x9759;&#x6001;&#x65B9;&#x6CD5;)&#x3002;</p>
+<p>&#x6BD4;&#x5982; Hibernate &#x7684; SessionFactory&#xFF0C;&#x5B83;&#x5145;&#x5F53;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x6E90;&#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x5E76;&#x8D1F;&#x8D23;&#x521B;&#x5EFA; Session &#x5BF9;&#x8C61;&#x3002;SessionFactory &#x5E76;&#x4E0D;&#x662F;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x901A;&#x5E38;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A; SessionFactory &#x5C31;&#x591F;&#xFF0C;&#x8FD9;&#x662F;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;</p>
+<h2 id="52-------&#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x516B;&#x79CD;&#x65B9;&#x5F0F;">5.2       &#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x516B;&#x79CD;&#x65B9;&#x5F0F;</h2>
+<p>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x6709;&#x516B;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<p><strong>1)</strong>    &#x997F;&#x6C49;&#x5F0F;<strong>(</strong>&#x9759;&#x6001;&#x5E38;&#x91CF;<strong>)</strong></p>
+<p><strong>2)</strong>    &#x997F;&#x6C49;&#x5F0F;&#xFF08;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#xFF09;</p>
+<p><strong>3)</strong>    &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;)</p>
+<p><strong>4)</strong>    &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x65B9;&#x6CD5;)</p>
+<p><strong>5)</strong>    &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;)</p>
+<p><strong>6)</strong>    &#x53CC;&#x91CD;&#x68C0;&#x67E5;</p>
+<p><strong>7)</strong>    &#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;</p>
+<p><strong>8)</strong>    &#x679A;&#x4E3E;</p>
+<h2 id="53-------&#x997F;&#x6C49;&#x5F0F;&#xFF08;&#x9759;&#x6001;&#x5E38;&#x91CF;&#xFF09;">5.3       &#x997F;&#x6C49;&#x5F0F;&#xFF08;&#x9759;&#x6001;&#x5E38;&#x91CF;&#xFF09;</h2>
+<p>&#x997F;&#x6C49;&#x5F0F;&#xFF08;&#x9759;&#x6001;&#x5E38;&#x91CF;&#xFF09;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>1)    &#x6784;&#x9020;&#x5668;&#x79C1;&#x6709;&#x5316; (&#x9632;&#x6B62; new )</p>
+<p>2)    &#x7C7B;&#x7684;&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</p>
+<p>3)    &#x5411;&#x5916;&#x66B4;&#x9732;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x516C;&#x5171;&#x65B9;&#x6CD5;&#x3002;getInstance</p>
+<p>4)    &#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type1;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest01</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">//&#x6D4B;&#x8BD5;</span>
+        Singleton instance = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
+        System.out.println(instance == instance2); <span class="hljs-comment">// true</span>
+        System.out.println(<span class="hljs-string">&quot;instance.hashCode=&quot;</span> + instance.hashCode());
+        System.out.println(<span class="hljs-string">&quot;instance2.hashCode=&quot;</span> + instance2.hashCode());
+    }
+}
+
+<span class="hljs-comment">//&#x997F;&#x6C49;&#x5F0F;(&#x9759;&#x6001;&#x53D8;&#x91CF;)</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-comment">//1. &#x6784;&#x9020;&#x5668;&#x79C1;&#x6709;&#x5316;, &#x5916;&#x90E8;&#x80FD;new</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-comment">//2.&#x672C;&#x7C7B;&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> Singleton instance = <span class="hljs-keyword">new</span> Singleton();
+    <span class="hljs-comment">//3. &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x516C;&#x6709;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> instance;
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)    &#x4F18;&#x70B9;&#xFF1A;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x7C7B;&#x88C5;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5B8C;&#x6210;&#x5B9E;&#x4F8B;&#x5316;&#x3002;&#x907F;&#x514D;&#x4E86;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x95EE;&#x9898;&#x3002;</p>
+<p>2)    &#x7F3A;&#x70B9;&#xFF1A;&#x5728;&#x7C7B;&#x88C5;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5B8C;&#x6210;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x6CA1;&#x6709;&#x8FBE;&#x5230; Lazy Loading &#x7684;&#x6548;&#x679C;&#x3002;&#x5982;&#x679C;&#x4ECE;&#x59CB;&#x81F3;&#x7EC8;&#x4ECE;&#x672A;&#x4F7F;&#x7528;&#x8FC7;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5219;&#x4F1A;&#x9020;&#x6210;&#x5185;&#x5B58;&#x7684;&#x6D6A;&#x8D39;</p>
+<p>3)    &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x57FA;&#x4E8E; classloder &#x673A;&#x5236;&#x907F;&#x514D;&#x4E86;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x540C;&#x6B65;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x8FC7;&#xFF0C;instance &#x5728;&#x7C7B;&#x88C5;&#x8F7D;&#x65F6;&#x5C31;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x5728;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x4E2D;&#x5927;&#x591A;&#x6570;&#x90FD;&#x662F;&#x8C03;&#x7528; getInstance &#x65B9;&#x6CD5;&#xFF0C; &#x4F46;&#x662F;&#x5BFC;&#x81F4;&#x7C7B;&#x88C5;&#x8F7D;&#x7684;&#x539F;&#x56E0;&#x6709;&#x5F88;&#x591A;&#x79CD;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x5F0F;&#xFF08;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF09;&#x5BFC;&#x81F4;&#x7C7B;&#x88C5;&#x8F7D;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x521D;&#x59CB;&#x5316; instance &#x5C31;&#x6CA1;&#x6709;&#x8FBE;&#x5230; lazy loading &#x7684;&#x6548;&#x679C;</p>
+<p>4)    &#x7ED3;&#x8BBA;&#xFF1A;&#x8FD9;&#x79CD;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x53EF;&#x7528;&#xFF0C;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6D6A;&#x8D39;</p>
+<h2 id="54-------&#x997F;&#x6C49;&#x5F0F;&#xFF08;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#xFF09;">5.4       &#x997F;&#x6C49;&#x5F0F;&#xFF08;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#xFF09;</h2>
+<p>&#xD8; &#x4EE3;&#x7801;&#x6F14;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type2;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest02</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">//&#x6D4B;&#x8BD5;</span>
+        Singleton instance = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
+        System.out.println(instance == instance2); <span class="hljs-comment">// true</span>
+        System.out.println(<span class="hljs-string">&quot;instance.hashCode=&quot;</span> + instance.hashCode());
+        System.out.println(<span class="hljs-string">&quot;instance2.hashCode=&quot;</span> + instance2.hashCode());
+    }
+
+}
+
+<span class="hljs-comment">//&#x997F;&#x6C49;&#x5F0F;(&#x9759;&#x6001;&#x53D8;&#x91CF;)</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-comment">//1. &#x6784;&#x9020;&#x5668;&#x79C1;&#x6709;&#x5316;, &#x5916;&#x90E8;&#x80FD;new</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{
+    }
+    <span class="hljs-comment">//2.&#x672C;&#x7C7B;&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;</span>
+    <span class="hljs-keyword">private</span>  <span class="hljs-keyword">static</span> Singleton instance;
+    <span class="hljs-keyword">static</span> { <span class="hljs-comment">// &#x5728;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x5355;&#x4F8B;&#x5BF9;&#x8C61;</span>
+        instance = <span class="hljs-keyword">new</span> Singleton();
+    }
+    <span class="hljs-comment">//3. &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x516C;&#x6709;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> instance;
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)         &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x548C;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x5176;&#x5B9E;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5C06;&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x8FC7;&#x7A0B;&#x653E;&#x5728;&#x4E86;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#xFF0C;&#x4E5F;&#x662F;&#x5728;&#x7C7B;&#x88C5;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x6267;&#x884C;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x4F18;&#x7F3A;&#x70B9;&#x548C;&#x4E0A;&#x9762;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<p>2)         &#x7ED3;&#x8BBA;&#xFF1A;&#x8FD9;&#x79CD;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x53EF;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x5185;&#x5B58;&#x6D6A;&#x8D39;</p>
+<h2 id="55-------&#x61D2;&#x6C49;&#x5F0F;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;">5.5       &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;)</h2>
+<p>&#xD8; &#x4EE3;&#x7801;&#x6F14;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type3;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest03</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x61D2;&#x6C49;&#x5F0F;1 &#xFF0C; &#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;~&quot;</span>);
+        Singleton instance = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
+        System.out.println(instance == instance2); <span class="hljs-comment">// true</span>
+        System.out.println(<span class="hljs-string">&quot;instance.hashCode=&quot;</span> + instance.hashCode());
+        System.out.println(<span class="hljs-string">&quot;instance2.hashCode=&quot;</span> + instance2.hashCode());
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton instance;
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{}
+    <span class="hljs-comment">//&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;&#x5230;&#x8BE5;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x624D;&#x53BB;&#x521B;&#x5EFA; instance</span>
+    <span class="hljs-comment">//&#x5373;&#x61D2;&#x6C49;&#x5F0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span>(instance == <span class="hljs-keyword">null</span>) {
+            instance = <span class="hljs-keyword">new</span> Singleton();
+        }
+        <span class="hljs-keyword">return</span> instance;
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)    &#x8D77;&#x5230;&#x4E86; <strong>Lazy Loading</strong> &#x7684;&#x6548;&#x679C;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x80FD;&#x5728;&#x5355;&#x7EBF;&#x7A0B;&#x4E0B;&#x4F7F;&#x7528;&#x3002;</p>
+<p>2)    &#x5982;&#x679C;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;&#x4E86; if (singleton == null)&#x5224;&#x65AD;&#x8BED;&#x53E5;&#x5757;&#xFF0C;&#x8FD8;&#x672A;&#x6765;&#x5F97;&#x53CA;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E5F;&#x901A;&#x8FC7;&#x4E86;&#x8FD9;&#x4E2A;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#xFF0C;&#x8FD9;&#x65F6;&#x4FBF;&#x4F1A;&#x4EA7;&#x751F;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E0B;&#x4E0D;&#x53EF;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;</p>
+<p>3)    &#x7ED3;&#x8BBA;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;.</p>
+<h2 id="56-------&#x61D2;&#x6C49;&#x5F0F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x65B9;&#x6CD5;">5.6       &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x65B9;&#x6CD5;)</h2>
+<p>&#xD8; &#x4EE3;&#x7801;&#x6F14;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type4;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest04</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x61D2;&#x6C49;&#x5F0F;2 &#xFF0C; &#x7EBF;&#x7A0B;&#x5B89;&#x5168;~&quot;</span>);
+        Singleton instance = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
+        System.out.println(instance == instance2); <span class="hljs-comment">// true</span>
+        System.out.println(<span class="hljs-string">&quot;instance.hashCode=&quot;</span> + instance.hashCode());
+        System.out.println(<span class="hljs-string">&quot;instance2.hashCode=&quot;</span> + instance2.hashCode());
+    }
+}
+
+<span class="hljs-comment">// &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x65B9;&#x6CD5;)</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton instance;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">//&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x52A0;&#x5165;&#x540C;&#x6B65;&#x5904;&#x7406;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x89E3;&#x51B3;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;</span>
+    <span class="hljs-comment">//&#x5373;&#x61D2;&#x6C49;&#x5F0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span>(instance == <span class="hljs-keyword">null</span>) {
+            instance = <span class="hljs-keyword">new</span> Singleton();
+        }
+        <span class="hljs-keyword">return</span> instance;
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)    &#x89E3;&#x51B3;&#x4E86;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;</p>
+<p>2)    &#x6548;&#x7387;&#x592A;&#x4F4E;&#x4E86;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x5728;&#x60F3;&#x83B7;&#x5F97;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65F6;&#x5019;&#xFF0C;&#x6267;&#x884C; getInstance()&#x65B9;&#x6CD5;&#x90FD;&#x8981;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#x3002;&#x800C;&#x5176;&#x5B9E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x5B9E;&#x4F8B;&#x5316;&#x4EE3;&#x7801;&#x5C31;&#x591F;&#x4E86;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x60F3;&#x83B7;&#x5F97;&#x8BE5;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x76F4;&#x63A5; return &#x5C31;&#x884C;&#x4E86;&#x3002;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#x6548;&#x7387;&#x592A;&#x4F4E;</p>
+<p>3)    &#x7ED3;&#x8BBA;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;</p>
+<h2 id="57-------&#x61D2;&#x6C49;&#x5F0F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;">5.7       &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x4EE3;&#x7801;&#x5757;)</h2>
+<p><img src="images/&#x5355;&#x4F8B;1.webp" alt="img"></p>
+<p>&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;</p>
+<h2 id="58-------&#x53CC;&#x91CD;&#x68C0;&#x67E5;">5.8       &#x53CC;&#x91CD;&#x68C0;&#x67E5;</h2>
+<p>&#xD8; &#x4EE3;&#x7801;&#x6F14;&#x793A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type6;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest06</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x53CC;&#x91CD;&#x68C0;&#x67E5;&quot;</span>);
+        Singleton instance = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
+        System.out.println(instance == instance2); <span class="hljs-comment">// true</span>
+        System.out.println(<span class="hljs-string">&quot;instance.hashCode=&quot;</span> + instance.hashCode());
+        System.out.println(<span class="hljs-string">&quot;instance2.hashCode=&quot;</span> + instance2.hashCode());
+
+    }
+
+}
+
+<span class="hljs-comment">// &#x61D2;&#x6C49;&#x5F0F;(&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x6B65;&#x65B9;&#x6CD5;)</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">volatile</span> Singleton instance;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">//&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x52A0;&#x5165;&#x53CC;&#x91CD;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#xFF0C;&#x89E3;&#x51B3;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;, &#x540C;&#x65F6;&#x89E3;&#x51B3;&#x61D2;&#x52A0;&#x8F7D;&#x95EE;&#x9898;</span>
+    <span class="hljs-comment">//&#x540C;&#x65F6;&#x4FDD;&#x8BC1;&#x4E86;&#x6548;&#x7387;, &#x63A8;&#x8350;&#x4F7F;&#x7528;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span>(instance == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">synchronized</span> (Singleton.class) {
+                <span class="hljs-keyword">if</span>(instance == <span class="hljs-keyword">null</span>) {
+                    instance = <span class="hljs-keyword">new</span> Singleton();
+                }
+            }
+
+        }
+        <span class="hljs-keyword">return</span> instance;
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)    Double-Check &#x6982;&#x5FF5;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x5F00;&#x53D1;&#x4E2D;&#x5E38;&#x4F7F;&#x7528;&#x5230;&#x7684;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x4E2D;&#x6240;&#x793A;&#xFF0C;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x4E86;&#x4E24;&#x6B21; if (singleton == null)&#x68C0;&#x67E5;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x4E86;&#x3002;</p>
+<p>2)    &#x8FD9;&#x6837;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x4EE3;&#x7801;&#x53EA;&#x7528;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x540E;&#x9762;&#x518D;&#x6B21;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x5224;&#x65AD; if (singleton == null)&#xFF0C;&#x76F4;&#x63A5; return &#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x907F;&#x514D;&#x7684;&#x53CD;&#x590D;&#x8FDB;&#x884C;&#x65B9;&#x6CD5;&#x540C;&#x6B65;.</p>
+<p>3)    &#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1B;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#xFF1B;&#x6548;&#x7387;&#x8F83;&#x9AD8;</p>
+<p>4)    &#x7ED3;&#x8BBA;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x5355;&#x4F8B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</p>
+<h2 id="59-------&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;">5.9       &#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;</h2>
+<p>&#xD8; &#x4EE3;&#x7801;&#x6F14;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type7;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest07</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#x5B8C;&#x6210;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&quot;</span>);
+        Singleton instance = Singleton.getInstance();
+        Singleton instance2 = Singleton.getInstance();
+        System.out.println(instance == instance2); <span class="hljs-comment">// true</span>
+        System.out.println(<span class="hljs-string">&quot;instance.hashCode=&quot;</span> + instance.hashCode());
+        System.out.println(<span class="hljs-string">&quot;instance2.hashCode=&quot;</span> + instance2.hashCode());
+
+    }
+
+}
+
+<span class="hljs-comment">// &#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#x5B8C;&#x6210;&#xFF0C; &#x63A8;&#x8350;&#x4F7F;&#x7528;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">volatile</span> Singleton instance;
+
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;&#x79C1;&#x6709;&#x5316;</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Singleton</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-comment">//&#x5199;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;,&#x8BE5;&#x7C7B;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x5C5E;&#x6027; Singleton</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonInstance</span> </span>{
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Singleton INSTANCE = <span class="hljs-keyword">new</span> Singleton();
+    }
+
+    <span class="hljs-comment">//&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x516C;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;SingletonInstance.INSTANCE</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> Singleton <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+
+        <span class="hljs-keyword">return</span> SingletonInstance.INSTANCE;
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)    &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x91C7;&#x7528;&#x4E86;&#x7C7B;&#x88C5;&#x8F7D;&#x7684;&#x673A;&#x5236;&#x6765;&#x4FDD;&#x8BC1;&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x4F8B;&#x65F6;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;</p>
+<p>2)    &#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#x65B9;&#x5F0F;&#x5728; Singleton &#x7C7B;&#x88AB;&#x88C5;&#x8F7D;&#x65F6;&#x5E76;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x9700;&#x8981;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;&#x8C03;&#x7528; getInstance &#x65B9;&#x6CD5;&#xFF0C;&#x624D;&#x4F1A;&#x88C5;&#x8F7D; SingletonInstance &#x7C7B;&#xFF0C;&#x4ECE;&#x800C;&#x5B8C;&#x6210; Singleton &#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x3002;</p>
+<p>3)    &#x7C7B;&#x7684;&#x9759;&#x6001;&#x5C5E;&#x6027;&#x53EA;&#x4F1A;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x52A0;&#x8F7D;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;JVM &#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4FDD;&#x8BC1;&#x4E86;&#x7EBF;&#x7A0B;&#x7684;&#x5B89;&#x5168;&#x6027;&#xFF0C;&#x5728;&#x7C7B;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x65F6;&#xFF0C;&#x522B;&#x7684;&#x7EBF;&#x7A0B;&#x662F;&#x65E0;&#x6CD5;&#x8FDB;&#x5165;&#x7684;&#x3002;</p>
+<p>4)    &#x4F18;&#x70B9;&#xFF1A;&#x907F;&#x514D;&#x4E86;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&#xFF0C;&#x5229;&#x7528;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#x7279;&#x70B9;&#x5B9E;&#x73B0;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#xFF0C;&#x6548;&#x7387;&#x9AD8;</p>
+<p>5)    &#x7ED3;&#x8BBA;&#xFF1A;&#x63A8;&#x8350;&#x4F7F;&#x7528;.</p>
+<h2 id="510-----&#x679A;&#x4E3E;">5.10     &#x679A;&#x4E3E;</h2>
+<p>&#xD8; &#x4EE3;&#x7801;&#x6F14;&#x793A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.singleton.type8;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonTest08</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Singleton instance = Singleton.INSTANCE;
+        Singleton instance2 = Singleton.INSTANCE;
+        System.out.println(instance == instance2);
+        System.out.println(instance.hashCode());
+        System.out.println(instance2.hashCode());
+        instance.sayOK();
+    }
+}
+<span class="hljs-comment">//&#x4F7F;&#x7528;&#x679A;&#x4E3E;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;, &#x63A8;&#x8350;</span>
+<span class="hljs-keyword">enum</span> Singleton {
+    INSTANCE; <span class="hljs-comment">//&#x5C5E;&#x6027;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayOK</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;ok~&quot;</span>);
+    }
+}
+</code></pre>
+<p>&#xD8; &#x4F18;&#x7F3A;&#x70B9;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>1)    &#x8FD9;&#x501F;&#x52A9; JDK1.5 &#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x679A;&#x4E3E;&#x6765;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;&#x4E0D;&#x4EC5;&#x80FD;&#x907F;&#x514D;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x80FD;&#x9632;&#x6B62;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>2)    &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F; <strong>Effective Java</strong> &#x4F5C;&#x8005; <strong>Josh Bloch</strong> &#x63D0;&#x5021;&#x7684;&#x65B9;&#x5F0F;</p>
+<p>3)    &#x7ED3;&#x8BBA;&#xFF1A;&#x63A8;&#x8350;&#x4F7F;&#x7528;</p>
+<h2 id="511-&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x5728;-jdk-&#x5E94;&#x7528;">5.11 &#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x5728; JDK &#x5E94;&#x7528;</h2>
+<p>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x5728; JDK &#x5E94;&#x7528;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;</p>
+<p>1)    &#x6211;&#x4EEC; JDK &#x4E2D;&#xFF0C;java.lang.Runtime &#x5C31;&#x662F;&#x7ECF;&#x5178;&#x7684;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;(&#x997F;&#x6C49;&#x5F0F;)</p>
+<p>2)     &#x4EE3;&#x7801;&#x5206;&#x6790;+Debug &#x6E90;&#x7801;+&#x4EE3;&#x7801;&#x8BF4;&#x660E;</p>
+<p><img src="images/&#x5355;&#x4F8B;2.jpg" alt="img"></p>
+<h2 id="512--&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;&#x8BF4;&#x660E;">5.12  &#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;&#x8BF4;&#x660E;</h2>
+<p>1)    &#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x4FDD;&#x8BC1;&#x4E86; &#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#x4E2D;&#x8BE5;&#x7C7B;&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8282;&#x7701;&#x4E86;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x9700;&#x8981;&#x9891;&#x7E41;&#x521B;&#x5EFA;&#x9500;&#x6BC1;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;</p>
+<p>2)    &#x5F53;&#x60F3;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x8BB0;&#x4F4F;&#x4F7F;&#x7528;&#x76F8;&#x5E94;&#x7684;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528; new</p>
+<p>3)    &#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x4F7F;&#x7528;&#x7684;&#x573A;&#x666F;&#xFF1A;&#x9700;&#x8981;&#x9891;&#x7E41;&#x7684;&#x8FDB;&#x884C;&#x521B;&#x5EFA;&#x548C;&#x9500;&#x6BC1;&#x7684;&#x5BF9;&#x8C61;&#x3001;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#x8017;&#x65F6;&#x8FC7;&#x591A;&#x6216;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#x8FC7;&#x591A;(&#x5373;&#xFF1A;&#x91CD;&#x91CF;&#x7EA7;&#x5BF9;&#x8C61;)&#xFF0C;&#x4F46;&#x53C8;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x5BF9;&#x8C61;&#x3001;&#x5DE5;&#x5177;&#x7C7B;&#x5BF9;&#x8C61;&#x3001;&#x9891;&#x7E41;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x6216;&#x6587;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;(&#x6BD4;&#x5982;&#x6570;&#x636E;&#x6E90;&#x3001;<strong>session</strong> &#x5DE5;&#x5382;&#x7B49;)</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第4章 设计模式概述.html" class="navigation navigation-prev " aria-label="Previous page: 第4章 设计模式概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第6章 工厂设计模式.html" class="navigation navigation-next " aria-label="Next page: 第6章 工厂设计模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第5章 单例设计模式","level":"1.5","depth":1,"next":{"title":"第6章 工厂设计模式","level":"1.6","depth":1,"path":"第6章 工厂设计模式.md","ref":"第6章 工厂设计模式.md","articles":[]},"previous":{"title":"第4章 设计模式概述","level":"1.4","depth":1,"path":"第4章 设计模式概述.md","ref":"第4章 设计模式概述.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第5章 单例设计模式.md","mtime":"2020-05-02T08:13:21.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,772 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第8章 建造者模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第9章 适配器模式.html" />
+    
+    
+    <link rel="prev" href="第7章 原型模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第8章 建造者模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-8-&#x7AE0;-&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;">&#x7B2C; 8 &#x7AE0; &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;</h1>
+<h2 id="81------&#x76D6;&#x623F;&#x9879;&#x76EE;&#x9700;&#x6C42;">8.1      &#x76D6;&#x623F;&#x9879;&#x76EE;&#x9700;&#x6C42;</h2>
+<p>1)   &#x9700;&#x8981;&#x5EFA;&#x623F;&#x5B50;&#xFF1A;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x4E3A;&#x6253;&#x6869;&#x3001;&#x780C;&#x5899;&#x3001;&#x5C01;&#x9876;</p>
+<p>2)   &#x623F;&#x5B50;&#x6709;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x666E;&#x901A;&#x623F;&#xFF0C;&#x9AD8;&#x697C;&#xFF0C;&#x522B;&#x5885;&#xFF0C;&#x5404;&#x79CD;&#x623F;&#x5B50;&#x7684;&#x8FC7;&#x7A0B;&#x867D;&#x7136;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x6C42;&#x4E0D;&#x8981;&#x76F8;&#x540C;&#x7684;.</p>
+<p>3)   &#x8BF7;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B8C;&#x6210;&#x9700;&#x6C42;.</p>
+<h2 id="82------&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x76D6;&#x623F;&#x9700;&#x6C42;">8.2      &#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x76D6;&#x623F;&#x9700;&#x6C42;</h2>
+<p>1)   &#x601D;&#x8DEF;&#x5206;&#x6790;(&#x56FE;&#x89E3;)</p>
+<p><img src="images/builder1.jpg" alt="img"></p>
+<p>2)   &#x770B;&#x8001;&#x5E08;&#x4EE3;&#x7801;&#x7684;&#x6F14;&#x793A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.builder;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractHouse</span> </span>{
+    <span class="hljs-comment">//&#x6253;&#x5730;&#x57FA;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildBasic</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">//&#x780C;&#x5899;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildWalls</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">//&#x5C01;&#x9876;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">roofed</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">()</span> </span>{
+        buildBasic();
+        buildWalls();
+        roofed();
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommonHouse</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractHouse</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildBasic</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x666E;&#x901A;&#x623F;&#x5B50;&#x6253;&#x5730;&#x57FA; &quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildWalls</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x666E;&#x901A;&#x623F;&#x5B50;&#x780C;&#x5899; &quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">roofed</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x666E;&#x901A;&#x623F;&#x5B50;&#x5C01;&#x9876; &quot;</span>);
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.builder;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        CommonHouse commonHouse = <span class="hljs-keyword">new</span> CommonHouse();
+        commonHouse.build();
+    }
+
+}
+</code></pre>
+<h2 id="83------&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x5206;&#x6790;">8.3      &#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x5206;&#x6790;</h2>
+<p>1)   &#x4F18;&#x70B9;&#x662F;&#x6BD4;&#x8F83;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x7B80;&#x5355;&#x6613;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>2)   &#x8BBE;&#x8BA1;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;&#xFF0C;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#xFF0C;&#x6CA1;&#x6709;&#x8BBE;&#x8BA1;&#x7F13;&#x5B58;&#x5C42;&#x5BF9;&#x8C61;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x6269;&#x5C55;&#x548C;&#x7EF4;&#x62A4;&#x4E0D;&#x597D;. &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x65B9;&#x6848;&#xFF0C;&#x628A;&#x4EA7;&#x54C1;(&#x5373;&#xFF1A;&#x623F;&#x5B50;) &#x548C; &#x521B;&#x5EFA;&#x4EA7;&#x54C1;&#x7684;&#x8FC7;&#x7A0B;(&#x5373;&#xFF1A;&#x5EFA;&#x623F;&#x5B50;&#x6D41;&#x7A0B;) &#x5C01;&#x88C5;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x8026;&#x5408;&#x6027;&#x589E;&#x5F3A;&#x4E86;&#x3002;</p>
+<p>3)   &#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;&#x5C06;&#x4EA7;&#x54C1;&#x548C;&#x4EA7;&#x54C1;&#x5EFA;&#x9020;&#x8FC7;&#x7A0B;&#x89E3;&#x8026;  =&gt; &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;.</p>
+<h2 id="84------&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">8.4      &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h2>
+<p>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</p>
+<p>1)    &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#xFF08;<strong>Builder Pattern</strong>&#xFF09; &#x53C8;&#x53EB;&#x751F;&#x6210;&#x5668;&#x6A21;&#x5F0F;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x8C61;&#x6784;&#x5EFA;&#x6A21;&#x5F0F;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5C06;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x7684;&#x5EFA;&#x9020;&#x8FC7;&#x7A0B;&#x62BD;&#x8C61;&#x51FA;&#x6765;&#xFF08;&#x62BD;&#x8C61;&#x7C7B;&#x522B;&#xFF09;&#xFF0C;&#x4F7F;&#x8FD9;&#x4E2A;&#x62BD;&#x8C61;&#x8FC7;&#x7A0B;&#x7684;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x51FA;&#x4E0D;&#x540C;&#x8868;&#x73B0;&#xFF08;&#x5C5E;&#x6027;&#xFF09;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>2)    &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F; &#x662F;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x7528;&#x6237;&#x53EA;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x5185;&#x5BB9;&#x5C31;&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x5B83;&#x4EEC;&#xFF0C; &#x7528;&#x6237;&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5185;&#x90E8;&#x7684;&#x5177;&#x4F53;&#x6784;&#x5EFA;&#x7EC6;&#x8282;&#x3002;</p>
+<h2 id="85------&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x56DB;&#x4E2A;&#x89D2;&#x8272;">8.5      &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x56DB;&#x4E2A;&#x89D2;&#x8272;</h2>
+<p>1)   Product&#xFF08;&#x4EA7;&#x54C1;&#x89D2;&#x8272;&#xFF09;&#xFF1A; &#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>2)   Builder&#xFF08;&#x62BD;&#x8C61;&#x5EFA;&#x9020;&#x8005;&#xFF09;&#xFF1A; &#x521B;&#x5EFA;&#x4E00;&#x4E2A; Product &#x5BF9;&#x8C61;&#x7684;&#x5404;&#x4E2A;&#x90E8;&#x4EF6;&#x6307;&#x5B9A;&#x7684; &#x63A5;&#x53E3;<strong>/</strong>&#x62BD;&#x8C61;&#x7C7B;&#x3002;</p>
+<p>3)   ConcreteBuilder&#xFF08;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#xFF09;&#xFF1A; &#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#xFF0C;&#x6784;&#x5EFA;&#x548C;&#x88C5;&#x914D;&#x5404;&#x4E2A;&#x90E8;&#x4EF6;&#x3002;</p>
+<p>4)   Director&#xFF08;&#x6307;&#x6325;&#x8005;&#xFF09;&#xFF1A; &#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x4F7F;&#x7528; Builder &#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5B83;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x4E2A;&#x4F5C;&#x7528;&#xFF0C;&#x4E00;&#x662F;&#xFF1A;&#x9694;&#x79BB;&#x4E86;&#x5BA2;&#x6237;&#x4E0E;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x4EA7;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E8C;&#x662F;&#xFF1A;&#x8D1F;&#x8D23;&#x63A7;&#x5236;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x7684;&#x751F;&#x4EA7;&#x8FC7;&#x7A0B;&#x3002;</p>
+<h2 id="86------&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x7C7B;&#x56FE;">8.6      &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x7C7B;&#x56FE;</h2>
+<p><img src="images/builder2.jpg" alt="img"></p>
+<h2 id="87------&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x76D6;&#x623F;&#x9700;&#x6C42;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;">8.7      &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x76D6;&#x623F;&#x9700;&#x6C42;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;</h2>
+<p>1)    &#x9700;&#x8981;&#x5EFA;&#x623F;&#x5B50;&#xFF1A;&#x8FD9;&#x4E00;&#x8FC7;&#x7A0B;&#x4E3A;&#x6253;&#x6869;&#x3001;&#x780C;&#x5899;&#x3001;&#x5C01;&#x9876;&#x3002;&#x4E0D;&#x7BA1;&#x662F;&#x666E;&#x901A;&#x623F;&#x5B50;&#x4E5F;&#x597D;&#xFF0C;&#x522B;&#x5885;&#x4E5F;&#x597D;&#x90FD;&#x9700;&#x8981;&#x7ECF;&#x5386;&#x8FD9;&#x4E9B;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;(Builder Pattern)&#x6765;&#x5B8C;&#x6210;</p>
+<p>2)    &#x601D;&#x8DEF;&#x5206;&#x6790;&#x56FE;&#x89E3;(&#x7C7B;&#x56FE;)</p>
+<p><img src="images/builder3.jpg" alt="img"></p>
+<p>3)    <img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\msohtmlclip1\01\clip_image007.gif" alt="img">&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.builder.improve;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+
+        <span class="hljs-comment">//&#x76D6;&#x666E;&#x901A;&#x623F;&#x5B50;</span>
+        CommonHouse commonHouse = <span class="hljs-keyword">new</span> CommonHouse();
+        <span class="hljs-comment">//&#x51C6;&#x5907;&#x521B;&#x5EFA;&#x623F;&#x5B50;&#x7684;&#x6307;&#x6325;&#x8005;</span>
+        HouseDirector houseDirector = <span class="hljs-keyword">new</span> HouseDirector(commonHouse);
+
+        <span class="hljs-comment">//&#x5B8C;&#x6210;&#x76D6;&#x623F;&#x5B50;&#xFF0C;&#x8FD4;&#x56DE;&#x4EA7;&#x54C1;(&#x666E;&#x901A;&#x623F;&#x5B50;)</span>
+        House house = houseDirector.constructHouse();
+
+        <span class="hljs-comment">//System.out.println(&quot;&#x8F93;&#x51FA;&#x6D41;&#x7A0B;&quot;);</span>
+
+        System.out.println(<span class="hljs-string">&quot;--------------------------&quot;</span>);
+        <span class="hljs-comment">//&#x76D6;&#x9AD8;&#x697C;</span>
+        HighBuilding highBuilding = <span class="hljs-keyword">new</span> HighBuilding();
+        <span class="hljs-comment">//&#x91CD;&#x7F6E;&#x5EFA;&#x9020;&#x8005;</span>
+        houseDirector.setHouseBuilder(highBuilding);
+        <span class="hljs-comment">//&#x5B8C;&#x6210;&#x76D6;&#x623F;&#x5B50;&#xFF0C;&#x8FD4;&#x56DE;&#x4EA7;&#x54C1;(&#x9AD8;&#x697C;)</span>
+        houseDirector.constructHouse();
+    }
+}
+
+
+<span class="hljs-keyword">package</span> com.atguigu.builder.improve;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommonHouse</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HouseBuilder</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildBasic</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x666E;&#x901A;&#x623F;&#x5B50;&#x6253;&#x5730;&#x57FA;5&#x7C73; &quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildWalls</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x666E;&#x901A;&#x623F;&#x5B50;&#x780C;&#x5899;10cm &quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">roofed</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        StringBuilder builder = <span class="hljs-keyword">new</span> StringBuilder();
+        System.out.println(<span class="hljs-string">&quot; &#x666E;&#x901A;&#x623F;&#x5B50;&#x5C4B;&#x9876; &quot;</span>);
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.builder.improve;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HighBuilding</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HouseBuilder</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildBasic</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x9AD8;&#x697C;&#x7684;&#x6253;&#x5730;&#x57FA;100&#x7C73; &quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildWalls</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x9AD8;&#x697C;&#x7684;&#x780C;&#x5899;20cm &quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">roofed</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot; &#x9AD8;&#x697C;&#x7684;&#x900F;&#x660E;&#x5C4B;&#x9876; &quot;</span>);
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.builder.improve;
+
+<span class="hljs-comment">//&#x4EA7;&#x54C1;-&gt;Product</span>
+<span class="hljs-keyword">public</span>  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">House</span> </span>{
+    <span class="hljs-keyword">private</span> String baise;
+    <span class="hljs-keyword">private</span> String wall;
+    <span class="hljs-keyword">private</span> String roofed;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getBaise</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> baise;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBaise</span><span class="hljs-params">(String baise)</span> </span>{
+        <span class="hljs-keyword">this</span>.baise = baise;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getWall</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> wall;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setWall</span><span class="hljs-params">(String wall)</span> </span>{
+        <span class="hljs-keyword">this</span>.wall = wall;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getRoofed</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> roofed;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRoofed</span><span class="hljs-params">(String roofed)</span> </span>{
+        <span class="hljs-keyword">this</span>.roofed = roofed;
+    }
+}
+
+<span class="hljs-keyword">package</span> com.atguigu.builder.improve;
+<span class="hljs-comment">// &#x62BD;&#x8C61;&#x7684;&#x5EFA;&#x9020;&#x8005;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HouseBuilder</span> </span>{
+    <span class="hljs-keyword">protected</span> House house = <span class="hljs-keyword">new</span> House();
+    <span class="hljs-comment">//&#x5C06;&#x5EFA;&#x9020;&#x7684;&#x6D41;&#x7A0B;&#x5199;&#x597D;, &#x62BD;&#x8C61;&#x7684;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildBasic</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildWalls</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">roofed</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">//&#x5EFA;&#x9020;&#x623F;&#x5B50;&#x597D;&#xFF0C; &#x5C06;&#x4EA7;&#x54C1;(&#x623F;&#x5B50;) &#x8FD4;&#x56DE;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> House <span class="hljs-title">buildHouse</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> house;
+    }
+}
+
+<span class="hljs-keyword">package</span> com.atguigu.builder.improve;
+<span class="hljs-comment">//&#x6307;&#x6325;&#x8005;&#xFF0C;&#x8FD9;&#x91CC;&#x53BB;&#x6307;&#x5B9A;&#x5236;&#x4F5C;&#x6D41;&#x7A0B;&#xFF0C;&#x8FD4;&#x56DE;&#x4EA7;&#x54C1;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HouseDirector</span> </span>{
+    HouseBuilder houseBuilder = <span class="hljs-keyword">null</span>;
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;&#x4F20;&#x5165; houseBuilder</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HouseDirector</span><span class="hljs-params">(HouseBuilder houseBuilder)</span> </span>{
+        <span class="hljs-keyword">this</span>.houseBuilder = houseBuilder;
+    }
+    <span class="hljs-comment">//&#x901A;&#x8FC7;setter &#x4F20;&#x5165; houseBuilder</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setHouseBuilder</span><span class="hljs-params">(HouseBuilder houseBuilder)</span> </span>{
+        <span class="hljs-keyword">this</span>.houseBuilder = houseBuilder;
+    }
+    <span class="hljs-comment">//&#x5982;&#x4F55;&#x5904;&#x7406;&#x5EFA;&#x9020;&#x623F;&#x5B50;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x4EA4;&#x7ED9;&#x6307;&#x6325;&#x8005;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> House <span class="hljs-title">constructHouse</span><span class="hljs-params">()</span> </span>{
+        houseBuilder.buildBasic();
+        houseBuilder.buildWalls();
+        houseBuilder.roofed();
+        <span class="hljs-keyword">return</span> houseBuilder.buildHouse();
+    }
+}
+</code></pre>
+<h2 id="88------&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x5728;-jdk-&#x7684;&#x5E94;&#x7528;&#x548C;&#x6E90;&#x7801;&#x5206;&#x6790;">8.8      &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x5728; JDK &#x7684;&#x5E94;&#x7528;&#x548C;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p>1)   java.lang.StringBuilder &#x4E2D;&#x7684;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;</p>
+<p>2)   &#x4EE3;&#x7801;&#x8BF4;&#x660E;+Debug &#x6E90;&#x7801;</p>
+<p><img src="images/builder4.jpg" alt="img"></p>
+<p>3)   &#x6E90;&#x7801;&#x4E2D;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x89D2;&#x8272;&#x5206;&#x6790;</p>
+<p>&#xFC; Appendable &#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x591A;&#x4E2A; append &#x65B9;&#x6CD5;(&#x62BD;&#x8C61;&#x65B9;&#x6CD5;), &#x5373; Appendable &#x4E3A;&#x62BD;&#x8C61;&#x5EFA;&#x9020;&#x8005;, &#x5B9A;&#x4E49;&#x4E86;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</p>
+<p>&#xFC; AbstractStringBuilder &#x5B9E;&#x73B0;&#x4E86;  Appendable &#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x7684; AbstractStringBuilder                                                   &#x5DF2;&#x7ECF;&#x662F;&#x5EFA;&#x9020;&#x8005;&#xFF0C;&#x53EA;&#x662F;&#x4E0D;&#x80FD;&#x5B9E;&#x4F8B;&#x5316;</p>
+<p>&#xFC; StringBuilder &#x5373;&#x5145;&#x5F53;&#x4E86;&#x6307;&#x6325;&#x8005;&#x89D2;&#x8272;&#xFF0C;&#x540C;&#x65F6;&#x5145;&#x5F53;&#x4E86;&#x5177;&#x4F53;&#x7684;&#x5EFA;&#x9020;&#x8005;&#xFF0C;&#x5EFA;&#x9020;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x7531; AbstractStringBuilder &#x5B8C;&#x6210; , &#x800C; StringBuilder&#x7EE7;&#x627F;&#x4E86; AbstractStringBuilder</p>
+<h2 id="89------&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;">8.9      &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;</h2>
+<p>1)   &#x5BA2;&#x6237;&#x7AEF;(&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;)&#x4E0D;&#x5FC5;&#x77E5;&#x9053;&#x4EA7;&#x54C1;&#x5185;&#x90E8;&#x7EC4;&#x6210;&#x7684;&#x7EC6;&#x8282;&#xFF0C;&#x5C06;&#x4EA7;&#x54C1;&#x672C;&#x8EAB;&#x4E0E;&#x4EA7;&#x54C1;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x89E3;&#x8026;&#xFF0C;&#x4F7F;&#x5F97;&#x76F8;&#x540C;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E0D;&#x540C;&#x7684;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;</p>
+<p>2)   &#x6BCF;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#x90FD;&#x76F8;&#x5BF9;&#x72EC;&#x7ACB;&#xFF0C;&#x800C;&#x4E0E;&#x5176;&#x4ED6;&#x7684;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#x65E0;&#x5173;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x66FF;&#x6362;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#x6216;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#xFF0C; &#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#x5373;&#x53EF;&#x5F97;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;</p>
+<p>3)   &#x53EF;&#x4EE5;&#x66F4;&#x52A0;&#x7CBE;&#x7EC6;&#x5730;&#x63A7;&#x5236;&#x4EA7;&#x54C1;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B; &#x3002;&#x5C06;&#x590D;&#x6742;&#x4EA7;&#x54C1;&#x7684;&#x521B;&#x5EFA;&#x6B65;&#x9AA4;&#x5206;&#x89E3;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4F7F;&#x5F97;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#xFF0C; &#x4E5F;&#x66F4;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x6765;&#x63A7;&#x5236;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;</p>
+<p>4)   &#x589E;&#x52A0;&#x65B0;&#x7684;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#x65E0;&#x987B;&#x4FEE;&#x6539;&#x539F;&#x6709;&#x7C7B;&#x5E93;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6307;&#x6325;&#x8005;&#x7C7B;&#x9488;&#x5BF9;&#x62BD;&#x8C61;&#x5EFA;&#x9020;&#x8005;&#x7C7B;&#x7F16;&#x7A0B;&#xFF0C;&#x7CFB;&#x7EDF;&#x6269;&#x5C55;&#x65B9;&#x4FBF;&#xFF0C;&#x7B26;&#x5408;&#x201C;&#x5F00;&#x95ED;&#x539F;&#x5219;&#x201D;</p>
+<p>5)   &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x4EA7;&#x54C1;&#x4E00;&#x822C;&#x5177;&#x6709;&#x8F83;&#x591A;&#x7684;&#x5171;&#x540C;&#x70B9;&#xFF0C;&#x5176;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x76F8;&#x4F3C;&#xFF0C;&#x5982;&#x679C;&#x4EA7;&#x54C1;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x6027;&#x5F88;&#x5927;&#xFF0C;&#x5219;&#x4E0D;&#x9002;&#x5408;&#x4F7F;&#x7528;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x5176;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#x53D7;&#x5230;&#x4E00;&#x5B9A;&#x7684;&#x9650;&#x5236;&#x3002;</p>
+<p>6)   &#x5982;&#x679C;&#x4EA7;&#x54C1;&#x7684;&#x5185;&#x90E8;&#x53D8;&#x5316;&#x590D;&#x6742;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x5F88;&#x591A;&#x5177;&#x4F53;&#x5EFA;&#x9020;&#x8005;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x79CD;&#x53D8;&#x5316;&#xFF0C;&#x5BFC;&#x81F4;&#x7CFB;&#x7EDF;&#x53D8;&#x5F97;&#x5F88;&#x5E9E;&#x5927;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8981;&#x8003;&#x8651;&#x662F;&#x5426;&#x9009;&#x62E9;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;.</p>
+<p>7)   &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F; VS &#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;</p>
+<p>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;&#x5BF9;&#x4EA7;&#x54C1;&#x5BB6;&#x65CF;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x5BB6;&#x65CF;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x4EA7;&#x54C1;&#xFF1A;&#x5177;&#x6709;&#x4E0D;&#x540C;&#x5206;&#x7C7B;&#x7EF4;&#x5EA6;&#x7684;&#x4EA7;&#x54C1;&#x7EC4;&#x5408;&#xFF0C;&#x91C7;&#x7528;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x53EA;&#x5173;&#x5FC3;&#x4EC0;&#x4E48;&#x4EA7;&#x54C1;&#x7531;&#x4EC0;&#x4E48;&#x5DE5;&#x5382;&#x751F;&#x4EA7;&#x5373;&#x53EF;&#x3002;&#x800C;&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;&#x5219;&#x662F;&#x8981;&#x6C42;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x84DD;&#x56FE;&#x5EFA;&#x9020;&#x4EA7;&#x54C1;&#xFF0C;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x901A;&#x8FC7;&#x7EC4;&#x88C5;&#x96F6;&#x914D;&#x4EF6;&#x800C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x4EA7;&#x54C1;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第7章 原型模式.html" class="navigation navigation-prev " aria-label="Previous page: 第7章 原型模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第9章 适配器模式.html" class="navigation navigation-next " aria-label="Next page: 第9章 适配器模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第8章 建造者模式","level":"1.8","depth":1,"next":{"title":"第9章 适配器模式","level":"1.9","depth":1,"path":"第9章 适配器模式.md","ref":"第9章 适配器模式.md","articles":[]},"previous":{"title":"第7章 原型模式","level":"1.7","depth":1,"path":"第7章 原型模式.md","ref":"第7章 原型模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第8章 建造者模式.md","mtime":"2020-04-15T06:10:36.762Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

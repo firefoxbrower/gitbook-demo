@@ -1,0 +1,835 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第12章 组合模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第13章 外观模式.html" />
+    
+    
+    <link rel="prev" href="第11章 装饰者模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第12章 组合模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-12-&#x7AE0;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;">&#x7B2C; 12 &#x7AE0;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;</h1>
+<h2 id="121----&#x770B;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;&#x9700;&#x6C42;">12.1    &#x770B;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;&#x9700;&#x6C42;</h2>
+<p>&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x9700;&#x6C42;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5C55;&#x793A;&#x51FA;&#x5B66;&#x6821;&#x7684;&#x9662;&#x7CFB;&#x7EC4;&#x6210;&#xFF0C;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x6709;&#x591A;&#x4E2A;&#x5B66;&#x9662;&#xFF0C; &#x4E00;&#x4E2A;&#x5B66;&#x9662;&#x6709;&#x591A;&#x4E2A;&#x7CFB;&#x3002;&#x5982;&#x56FE;&#xFF1A;</p>
+<p><img src="F:\gitbook-demo\images\composite1.jpg" alt="img"></p>
+<h2 id="122--&#x7C7B;&#x56FE;">12.2  (&#x7C7B;&#x56FE;)</h2>
+<h2 id="-----&#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;"><img src="images/composite2.jpg" alt="img">      &#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;</h2>
+<h2 id="123----&#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x5206;&#x6790;">12.3    &#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#x5206;&#x6790;</h2>
+<p>1)   &#x5C06;&#x5B66;&#x9662;&#x770B;&#x505A;&#x662F;&#x5B66;&#x6821;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x7CFB;&#x662F;&#x5B66;&#x9662;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x8FD9;&#x6837;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x7AD9;&#x5728;&#x7EC4;&#x7EC7;&#x5927;&#x5C0F;&#x6765;&#x8FDB;&#x884C;&#x5206;&#x5C42;&#x6B21;&#x7684;</p>
+<p>2)   &#x5B9E;&#x9645;&#x4E0A;&#x6211;&#x4EEC;&#x7684;&#x8981;&#x6C42;&#x662F; &#xFF1A;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5C55;&#x793A;&#x51FA;&#x5B66;&#x6821;&#x7684;&#x9662;&#x7CFB;&#x7EC4;&#x6210;&#xFF0C;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x6709;&#x591A;&#x4E2A;&#x5B66;&#x9662;&#xFF0C;&#x4E00;&#x4E2A;&#x5B66;&#x9662;&#x6709;&#x591A;&#x4E2A;&#x7CFB;&#xFF0C; &#x56E0;</p>
+<p>&#x6B64;&#x8FD9;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x4E0D;&#x80FD;&#x5F88;&#x597D;&#x5B9E;&#x73B0;&#x7684;&#x7BA1;&#x7406;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;&#x5B66;&#x9662;&#x3001;&#x7CFB;&#x7684;&#x6DFB;&#x52A0;&#xFF0C;&#x5220;&#x9664;&#xFF0C;&#x904D;&#x5386;&#x7B49;</p>
+<p>3)   &#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;&#x628A;&#x5B66;&#x6821;&#x3001;&#x9662;&#x3001;&#x7CFB;&#x90FD;&#x770B;&#x505A;&#x662F;&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x7EE7;&#x627F;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x4E2A;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x597D;&#x7684;&#x5B9E;&#x73B0;&#x7BA1;&#x7406;&#x64CD;&#x4F5C;&#x3002; =&gt; &#x7EC4;&#x5408;&#x6A21;&#x5F0F;</p>
+<h2 id="124----&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">12.4    &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h2>
+<p>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</p>
+<p>1)   &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#xFF08;Composite Pattern&#xFF09;&#xFF0C;&#x53C8;&#x53EB;&#x90E8;&#x5206;&#x6574;&#x4F53;&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x521B;&#x5EFA;&#x4E86;&#x5BF9;&#x8C61;&#x7EC4;&#x7684;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#xFF0C;&#x5C06;&#x5BF9;&#x8C61;&#x7EC4;&#x5408;&#x6210;&#x6811;&#x72B6;&#x7ED3;&#x6784;&#x4EE5;&#x8868;&#x793A;&#x201C;&#x6574;&#x4F53;<strong>-</strong>&#x90E8;&#x5206;&#x201D;&#x7684;&#x5C42;&#x6B21;&#x5173;&#x7CFB;&#x3002;</p>
+<p>2)   &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x4F9D;&#x636E;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x6765;&#x7EC4;&#x5408;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;&#x90E8;&#x5206;&#x4EE5;&#x53CA;&#x6574;&#x4F53;&#x5C42;&#x6B21;&#x3002;</p>
+<p>3)   &#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x5C5E;&#x4E8E;&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>4)   &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x4F7F;&#x5F97;&#x7528;&#x6237;&#x5BF9;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#x548C;&#x7EC4;&#x5408;&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x5177;&#x6709;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5373;&#xFF1A;&#x7EC4;&#x5408;&#x80FD;&#x8BA9;&#x5BA2;&#x6237;&#x4EE5;&#x4E00;&#x81F4;&#x7684;&#x65B9;&#x5F0F;&#x5904;&#x7406;&#x4E2A;&#x522B;&#x5BF9;&#x8C61;&#x4EE5;&#x53CA;&#x7EC4;&#x5408;&#x5BF9;&#x8C61;</p>
+<h2 id="125--------&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x7C7B;&#x56FE;">12.5  <img src="images/composite3.jpg" alt="img">      &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x7C7B;&#x56FE;</h2>
+<p>&#x5BF9;&#x539F;&#x7406;&#x7ED3;&#x6784;&#x56FE;&#x7684;&#x8BF4;&#x660E;-&#x5373;(&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x89D2;&#x8272;&#x53CA;&#x804C;&#x8D23;)</p>
+<p>1)   <strong>Component</strong> :&#x8FD9;&#x662F;&#x7EC4;&#x5408;&#x4E2D;&#x5BF9;&#x8C61;&#x58F0;&#x660E;&#x63A5;&#x53E3;&#xFF0C;&#x5728;&#x9002;&#x5F53;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B9E;&#x73B0;&#x6240;&#x6709;&#x7C7B;&#x5171;&#x6709;&#x7684;&#x63A5;&#x53E3;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;,&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x548C;&#x7BA1;&#x7406;</p>
+<p>Component &#x5B50;&#x90E8;&#x4EF6;, Component &#x53EF;&#x4EE5;&#x662F;&#x62BD;&#x8C61;&#x7C7B;&#x6216;&#x8005;&#x63A5;&#x53E3;</p>
+<p>2)   <strong>Leaf :</strong> &#x5728;&#x7EC4;&#x5408;&#x4E2D;&#x8868;&#x793A;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;</p>
+<p>3)   <strong>Composite</strong> :&#x975E;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C; &#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5B50;&#x90E8;&#x4EF6;&#xFF0C;  &#x5728; Component &#x63A5;&#x53E3;&#x4E2D;&#x5B9E;&#x73B0; &#x5B50;&#x90E8;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x589E;&#x52A0;(add), &#x5220;&#x9664;&#x3002;</p>
+<h2 id="126----&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;&#x7684;-&#x5E94;&#x7528;&#x5B9E;&#x4F8B;">12.6    &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x5C55;&#x793A;&#x7684; &#x5E94;&#x7528;&#x5B9E;&#x4F8B;</h2>
+<p>&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x8981;&#x6C42;</p>
+<p>1)  &#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x9662;&#x7CFB;&#x7ED3;&#x6784;&#xFF1A;&#x9700;&#x6C42;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#x5C55;&#x793A;&#x51FA;&#x5B66;&#x6821;&#x7684;&#x9662;&#x7CFB;&#x7EC4;&#x6210;&#xFF0C;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x6709;&#x591A;&#x4E2A;&#x5B66;&#x9662;&#xFF0C; &#x4E00;&#x4E2A;&#x5B66;&#x9662;&#x6709;&#x591A;&#x4E2A;&#x7CFB;&#x3002;</p>
+<p>2)  &#x601D;&#x8DEF;&#x5206;&#x6790;&#x548C;&#x56FE;&#x89E3;(&#x7C7B;&#x56FE;)</p>
+<p><img src="images/composite4.jpg" alt="img"></p>
+<p>3)  &#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.composite;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+
+        <span class="hljs-comment">//&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x521B;&#x5EFA;&#x5BF9;&#x8C61; &#x5B66;&#x6821;</span>
+        OrganizationComponent university = <span class="hljs-keyword">new</span> University(<span class="hljs-string">&quot;&#x6E05;&#x534E;&#x5927;&#x5B66;&quot;</span>, <span class="hljs-string">&quot; &#x4E2D;&#x56FD;&#x9876;&#x7EA7;&#x5927;&#x5B66; &quot;</span>);
+
+        <span class="hljs-comment">//&#x521B;&#x5EFA; &#x5B66;&#x9662;</span>
+        OrganizationComponent computerCollege = <span class="hljs-keyword">new</span> College(<span class="hljs-string">&quot;&#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662;&quot;</span>, <span class="hljs-string">&quot; &#x8BA1;&#x7B97;&#x673A;&#x5B66;&#x9662; &quot;</span>);
+        OrganizationComponent infoEngineercollege = <span class="hljs-keyword">new</span> College(<span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x5DE5;&#x7A0B;&#x5B66;&#x9662;&quot;</span>, <span class="hljs-string">&quot; &#x4FE1;&#x606F;&#x5DE5;&#x7A0B;&#x5B66;&#x9662; &quot;</span>);
+
+
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x5404;&#x4E2A;&#x5B66;&#x9662;&#x4E0B;&#x9762;&#x7684;&#x7CFB;(&#x4E13;&#x4E1A;)</span>
+        computerCollege.add(<span class="hljs-keyword">new</span> Department(<span class="hljs-string">&quot;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&quot;</span>, <span class="hljs-string">&quot; &#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x4E0D;&#x9519; &quot;</span>));
+        computerCollege.add(<span class="hljs-keyword">new</span> Department(<span class="hljs-string">&quot;&#x7F51;&#x7EDC;&#x5DE5;&#x7A0B;&quot;</span>, <span class="hljs-string">&quot; &#x7F51;&#x7EDC;&#x5DE5;&#x7A0B;&#x4E0D;&#x9519; &quot;</span>));
+        computerCollege.add(<span class="hljs-keyword">new</span> Department(<span class="hljs-string">&quot;&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x4E0E;&#x6280;&#x672F;&quot;</span>, <span class="hljs-string">&quot; &#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;&#x4E0E;&#x6280;&#x672F;&#x662F;&#x8001;&#x724C;&#x7684;&#x4E13;&#x4E1A; &quot;</span>));
+
+        <span class="hljs-comment">//</span>
+        infoEngineercollege.add(<span class="hljs-keyword">new</span> Department(<span class="hljs-string">&quot;&#x901A;&#x4FE1;&#x5DE5;&#x7A0B;&quot;</span>, <span class="hljs-string">&quot; &#x901A;&#x4FE1;&#x5DE5;&#x7A0B;&#x4E0D;&#x597D;&#x5B66; &quot;</span>));
+        infoEngineercollege.add(<span class="hljs-keyword">new</span> Department(<span class="hljs-string">&quot;&#x4FE1;&#x606F;&#x5DE5;&#x7A0B;&quot;</span>, <span class="hljs-string">&quot; &#x4FE1;&#x606F;&#x5DE5;&#x7A0B;&#x597D;&#x5B66; &quot;</span>));
+
+        <span class="hljs-comment">//&#x5C06;&#x5B66;&#x9662;&#x52A0;&#x5165;&#x5230; &#x5B66;&#x6821;</span>
+        university.add(computerCollege);
+        university.add(infoEngineercollege);
+
+        <span class="hljs-comment">//university.print();</span>
+        infoEngineercollege.print();
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.composite;
+
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">College</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OrganizationComponent</span> </span>{
+
+    <span class="hljs-comment">//List &#x4E2D; &#x5B58;&#x653E;&#x7684;Department</span>
+    List&lt;OrganizationComponent&gt; organizationComponents = <span class="hljs-keyword">new</span> ArrayList&lt;OrganizationComponent&gt;();
+
+    <span class="hljs-comment">// &#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">College</span><span class="hljs-params">(String name, String des)</span> </span>{
+        <span class="hljs-keyword">super</span>(name, des);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+    }
+
+    <span class="hljs-comment">// &#x91CD;&#x5199;add</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(OrganizationComponent organizationComponent)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-comment">//  &#x5C06;&#x6765;&#x5B9E;&#x9645;&#x4E1A;&#x52A1;&#x4E2D;&#xFF0C;Colleage &#x7684; add &#x548C;  University add &#x4E0D;&#x4E00;&#x5B9A;&#x5B8C;&#x5168;&#x4E00;&#x6837;</span>
+        organizationComponents.add(organizationComponent);
+    }
+
+    <span class="hljs-comment">// &#x91CD;&#x5199;remove</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(OrganizationComponent organizationComponent)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        organizationComponents.remove(organizationComponent);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getName();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getDes</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getDes();
+    }
+
+    <span class="hljs-comment">// print&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x8F93;&#x51FA;University &#x5305;&#x542B;&#x7684;&#x5B66;&#x9662;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot;--------------&quot;</span> + getName() + <span class="hljs-string">&quot;--------------&quot;</span>);
+        <span class="hljs-comment">//&#x904D;&#x5386; organizationComponents </span>
+        <span class="hljs-keyword">for</span> (OrganizationComponent organizationComponent : organizationComponents) {
+            organizationComponent.print();
+        }
+    }
+
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.composite;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Department</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OrganizationComponent</span> </span>{
+
+    <span class="hljs-comment">//&#x6CA1;&#x6709;&#x96C6;&#x5408;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Department</span><span class="hljs-params">(String name, String des)</span> </span>{
+        <span class="hljs-keyword">super</span>(name, des);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+    }
+
+
+    <span class="hljs-comment">//add , remove &#x5C31;&#x4E0D;&#x7528;&#x5199;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x4ED6;&#x662F;&#x53F6;&#x5B50;&#x8282;&#x70B9;</span>
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getName();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getDes</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getDes();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(getName());
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.composite;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OrganizationComponent</span> </span>{
+
+    <span class="hljs-keyword">private</span> String name; <span class="hljs-comment">// &#x540D;&#x5B57;</span>
+    <span class="hljs-keyword">private</span> String des; <span class="hljs-comment">// &#x8BF4;&#x660E;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">protected</span>  <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(OrganizationComponent organizationComponent)</span> </span>{
+        <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;</span>
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnsupportedOperationException();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">protected</span>  <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(OrganizationComponent organizationComponent)</span> </span>{
+        <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;</span>
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UnsupportedOperationException();
+    }
+
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">OrganizationComponent</span><span class="hljs-params">(String name, String des)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.des = des;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getDes</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> des;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setDes</span><span class="hljs-params">(String des)</span> </span>{
+        <span class="hljs-keyword">this</span>.des = des;
+    }
+
+    <span class="hljs-comment">//&#x65B9;&#x6CD5;print, &#x505A;&#x6210;&#x62BD;&#x8C61;&#x7684;, &#x5B50;&#x7C7B;&#x90FD;&#x9700;&#x8981;&#x5B9E;&#x73B0;</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>;
+
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.composite;
+
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-comment">//University &#x5C31;&#x662F; Composite , &#x53EF;&#x4EE5;&#x7BA1;&#x7406;College</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">University</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OrganizationComponent</span> </span>{
+
+    List&lt;OrganizationComponent&gt; organizationComponents = <span class="hljs-keyword">new</span> ArrayList&lt;OrganizationComponent&gt;();
+
+    <span class="hljs-comment">// &#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">University</span><span class="hljs-params">(String name, String des)</span> </span>{
+        <span class="hljs-keyword">super</span>(name, des);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+    }
+
+    <span class="hljs-comment">// &#x91CD;&#x5199;add</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(OrganizationComponent organizationComponent)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        organizationComponents.add(organizationComponent);
+    }
+
+    <span class="hljs-comment">// &#x91CD;&#x5199;remove</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(OrganizationComponent organizationComponent)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        organizationComponents.remove(organizationComponent);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getName();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getDes</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getDes();
+    }
+
+    <span class="hljs-comment">// print&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x8F93;&#x51FA;University &#x5305;&#x542B;&#x7684;&#x5B66;&#x9662;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot;--------------&quot;</span> + getName() + <span class="hljs-string">&quot;--------------&quot;</span>);
+        <span class="hljs-comment">//&#x904D;&#x5386; organizationComponents </span>
+        <span class="hljs-keyword">for</span> (OrganizationComponent organizationComponent : organizationComponents) {
+            organizationComponent.print();
+        }
+    }
+
+}
+</code></pre>
+<h2 id="121----&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x5728;-jdk-&#x96C6;&#x5408;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;">12.1    &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x5728; JDK &#x96C6;&#x5408;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p>1)   Java &#x7684;&#x96C6;&#x5408;&#x7C7B;-<strong>HashMap</strong> &#x5C31;&#x4F7F;&#x7528;&#x4E86;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;</p>
+<p>2)   &#x4EE3;&#x7801;&#x5206;&#x6790;+Debug &#x6E90;&#x7801;</p>
+<p><img src="images/composite5.jpg" alt="img"></p>
+<p>3)    &#x7C7B;&#x56FE;<img src="images/composite6.jpg" alt="img"></p>
+<h2 id="122----&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;">12.2    &#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;</h2>
+<p>1)   &#x7B80;&#x5316;&#x5BA2;&#x6237;&#x7AEF;&#x64CD;&#x4F5C;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x53EA;&#x9700;&#x8981;&#x9762;&#x5BF9;&#x4E00;&#x81F4;&#x7684;&#x5BF9;&#x8C61;&#x800C;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x6574;&#x4F53;&#x90E8;&#x5206;&#x6216;&#x8005;&#x8282;&#x70B9;&#x53F6;&#x5B50;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p>2)   &#x5177;&#x6709;&#x8F83;&#x5F3A;&#x7684;&#x6269;&#x5C55;&#x6027;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x8981;&#x66F4;&#x6539;&#x7EC4;&#x5408;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x8C03;&#x6574;&#x5185;&#x90E8;&#x7684;&#x5C42;&#x6B21;&#x5173;&#x7CFB;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x7528;&#x505A;&#x51FA;&#x4EFB;&#x4F55;&#x6539;&#x52A8;.</p>
+<p>3)   &#x65B9;&#x4FBF;&#x521B;&#x5EFA;&#x51FA;&#x590D;&#x6742;&#x7684;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x7528;&#x7406;&#x4F1A;&#x7EC4;&#x5408;&#x91CC;&#x9762;&#x7684;&#x7EC4;&#x6210;&#x7EC6;&#x8282;&#xFF0C;&#x5BB9;&#x6613;&#x6DFB;&#x52A0;&#x8282;&#x70B9;&#x6216;&#x8005;&#x53F6;&#x5B50;&#x4ECE;&#x800C;&#x521B;&#x5EFA;&#x51FA;&#x590D;&#x6742;&#x7684;&#x6811;&#x5F62;&#x7ED3;&#x6784;</p>
+<p>4)   &#x9700;&#x8981;&#x904D;&#x5386;&#x7EC4;&#x7EC7;&#x673A;&#x6784;&#xFF0C;&#x6216;&#x8005;&#x5904;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x65F6;, &#x975E;&#x5E38;&#x9002;&#x5408;&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;.</p>
+<p>5)   &#x8981;&#x6C42;&#x8F83;&#x9AD8;&#x7684;&#x62BD;&#x8C61;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x8282;&#x70B9;&#x548C;&#x53F6;&#x5B50;&#x6709;&#x5F88;&#x591A;&#x5DEE;&#x5F02;&#x6027;&#x7684;&#x8BDD;&#xFF0C;&#x6BD4;&#x5982;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#x90FD;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x9002;&#x5408;&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.jdk;
+
+<span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.Map;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Composite</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+
+
+        <span class="hljs-comment">//&#x8BF4;&#x660E;</span>
+        <span class="hljs-comment">//1. Map &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7684;&#x6784;&#x5EFA; (&#x7C7B;&#x4F3C;&#x6211;&#x4EEC;&#x7684;Component)</span>
+        <span class="hljs-comment">//2. HashMap&#x662F;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x7684;&#x6784;&#x5EFA;(Composite), &#x5B9E;&#x73B0;/&#x7EE7;&#x627F;&#x4E86;&#x76F8;&#x5173;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-comment">//   put, putall </span>
+        <span class="hljs-comment">//3. Node &#x662F; HashMap&#x7684;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x7C7B;&#x4F3C;Leaf&#x53F6;&#x5B50;&#x8282;&#x70B9;, &#x8FD9;&#x91CC;&#x5C31;&#x6CA1;&#x6709;put, putall</span>
+        <span class="hljs-comment">//   static class Node&lt;K,V&gt; implements Map.Entry&lt;K,V&gt;</span>
+
+        Map&lt;Integer,String&gt; hashMap=<span class="hljs-keyword">new</span> HashMap&lt;Integer,String&gt;();
+        hashMap.put(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;&#x4E1C;&#x6E38;&#x8BB0;&quot;</span>);<span class="hljs-comment">//&#x76F4;&#x63A5;&#x5B58;&#x653E;&#x53F6;&#x5B50;&#x8282;&#x70B9;(Node)</span>
+
+        Map&lt;Integer,String&gt; map=<span class="hljs-keyword">new</span> HashMap&lt;Integer,String&gt;();
+        map.put(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x897F;&#x6E38;&#x8BB0;&quot;</span>);
+        map.put(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x7EA2;&#x697C;&#x68A6;&quot;</span>); <span class="hljs-comment">//..</span>
+        hashMap.putAll(map);
+        System.out.println(hashMap);
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第11章 装饰者模式.html" class="navigation navigation-prev " aria-label="Previous page: 第11章 装饰者模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第13章 外观模式.html" class="navigation navigation-next " aria-label="Next page: 第13章 外观模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第12章 组合模式","level":"1.12","depth":1,"next":{"title":"第13章 外观模式","level":"1.13","depth":1,"path":"第13章 外观模式.md","ref":"第13章 外观模式.md","articles":[]},"previous":{"title":"第11章 装饰者模式","level":"1.11","depth":1,"path":"第11章 装饰者模式.md","ref":"第11章 装饰者模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第12章 组合模式.md","mtime":"2020-04-17T06:52:19.666Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

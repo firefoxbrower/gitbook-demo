@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第21章 中介者模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第22章 备忘录模式.html" />
+    
+    
+    <link rel="prev" href="第20章 观察者模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第21章 中介者模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-21-&#x7AE0;&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;">&#x7B2C; 21 &#x7AE0;&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;</h1>
+<h2 id="211-&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x9879;&#x76EE;">21.1 &#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x9879;&#x76EE;</h2>
+<h2 id=""><img src="images/mediator1.jpg" alt="img"></h2>
+<p>&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x9879;&#x76EE;&#xFF1A;</p>
+<p>1)    &#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x5305;&#x62EC;&#x5404;&#x79CD;&#x8BBE;&#x5907;&#xFF0C;&#x95F9;&#x949F;&#x3001;&#x5496;&#x5561;&#x673A;&#x3001;&#x7535;&#x89C6;&#x673A;&#x3001;&#x7A97;&#x5E18; &#x7B49;</p>
+<p>2)    &#x4E3B;&#x4EBA;&#x8981;&#x770B;&#x7535;&#x89C6;&#x65F6;&#xFF0C;&#x5404;&#x4E2A;&#x8BBE;&#x5907;&#x53EF;&#x4EE5;&#x534F;&#x540C;&#x5DE5;&#x4F5C;&#xFF0C;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x770B;&#x7535;&#x89C6;&#x7684;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x6D41;&#x7A0B;&#x4E3A;&#xFF1A;&#x95F9;&#x94C3;&#x54CD;&#x8D77;-&gt;&#x5496;&#x5561;&#x673A;&#x5F00;&#x59CB;&#x505A;&#x5496;&#x5561;-&gt;&#x7A97;&#x5E18;&#x81EA;&#x52A8;&#x843D;&#x4E0B;-&gt;&#x7535;&#x89C6;&#x673A;&#x5F00;&#x59CB;&#x64AD;&#x653E;</p>
+<h2 id="212--&#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x7BA1;&#x7406;&#x95EE;&#x9898;">21.2  &#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x7BA1;&#x7406;&#x95EE;&#x9898;</h2>
+<p> <img src="images/mediator2.jpg" alt="img"></p>
+<h2 id="213-----&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x5206;&#x6790;">21.3     &#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x5206;&#x6790;</h2>
+<p>1)    &#x5F53;&#x5404;&#x7535;&#x5668;&#x5BF9;&#x8C61;&#x6709;&#x591A;&#x79CD;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x7684;&#x8C03;&#x7528;&#x5173;&#x7CFB;&#x4F1A;&#x6BD4;&#x8F83;&#x590D;&#x6742;</p>
+<p>2)    &#x5404;&#x4E2A;&#x7535;&#x5668;&#x5BF9;&#x8C61;&#x5F7C;&#x6B64;&#x8054;&#x7CFB;&#xFF0C;&#x4F60;&#x4E2D;&#x6709;&#x6211;&#xFF0C;&#x6211;&#x4E2D;&#x6709;&#x4F60;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x677E;&#x8026;&#x5408;.</p>
+<p>3)    &#x5404;&#x4E2A;&#x7535;&#x5668;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x6240;&#x4F20;&#x9012;&#x7684;&#x6D88;&#x606F;(&#x53C2;&#x6570;)&#xFF0C;&#x5BB9;&#x6613;&#x6DF7;&#x4E71;</p>
+<p>4)    &#x5F53;&#x7CFB;&#x7EDF;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7535;&#x5668;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x6216;&#x8005;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x3001;&#x6269;&#x5C55;&#x6027;&#x90FD;&#x4E0D;&#x7406;&#x60F3;                                                                                  &#x8003;&#x8651;&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;</p>
+<h2 id="214-----&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">21.4     &#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h2>
+<p>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</p>
+<p>1)    &#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#xFF08;Mediator Pattern&#xFF09;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x4E2D;&#x4ECB;&#x5BF9;&#x8C61;&#x6765;&#x5C01;&#x88C5;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5BF9;&#x8C61;&#x4EA4;&#x4E92;&#x3002;&#x4E2D;&#x4ECB;&#x8005;&#x4F7F;&#x5404;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x5730;&#x76F8;&#x4E92;&#x5F15;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5176;&#x8026;&#x5408;&#x677E;&#x6563;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x5730;&#x6539;&#x53D8;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;</p>
+<p>2)    &#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x5C5E;&#x4E8E;&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;&#xFF0C;&#x4F7F;&#x4EE3;&#x7801;&#x6613;&#x4E8E;&#x7EF4;&#x62A4;</p>
+<p>3)    &#x6BD4;&#x5982; MVC &#x6A21;&#x5F0F;&#xFF0C;C&#xFF08;Controller &#x63A7;&#x5236;&#x5668;&#xFF09;&#x662F; M&#xFF08;Model &#x6A21;&#x578B;&#xFF09;&#x548C; V&#xFF08;View &#x89C6;&#x56FE;&#xFF09;&#x7684;&#x4E2D;&#x4ECB;&#x8005;&#xFF0C;&#x5728;&#x524D;&#x540E;&#x7AEF;&#x4EA4;&#x4E92;&#x65F6;&#x8D77;&#x5230;&#x4E86;&#x4E2D;&#x95F4;&#x4EBA;&#x7684;&#x4F5C;&#x7528;</p>
+<h2 id="215-----&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x539F;&#x7406;&#x7C7B;&#x56FE;">21.5     &#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x539F;&#x7406;&#x7C7B;&#x56FE;</h2>
+<p> <img src="images/mediator3.jpg" alt="img"></p>
+<p>&#xD8; &#x5BF9;&#x539F;&#x7406;&#x7C7B;&#x56FE;&#x7684;&#x8BF4;&#x660E;-&#x5373;(&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x89D2;&#x8272;&#x53CA;&#x804C;&#x8D23;)</p>
+<p>1)    Mediator &#x5C31;&#x662F;&#x62BD;&#x8C61;&#x4E2D;&#x4ECB;&#x8005;,&#x5B9A;&#x4E49;&#x4E86;&#x540C;&#x4E8B;&#x5BF9;&#x8C61;&#x5230;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;</p>
+<p>2)    Colleague &#x662F;&#x62BD;&#x8C61;&#x540C;&#x4E8B;&#x7C7B;</p>
+<p>3)    ConcreteMediator &#x5177;&#x4F53;&#x7684;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;, &#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;, &#x4ED6;&#x9700;&#x8981;&#x77E5;&#x9053;&#x6240;&#x6709;&#x7684;&#x5177;&#x4F53;&#x7684;&#x540C;&#x4E8B;&#x7C7B;,&#x5373;&#x4EE5;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x6765;&#x7BA1;&#x7406;</p>
+<p>HashMap,&#x5E76;&#x63A5;&#x53D7;&#x67D0;&#x4E2A;&#x540C;&#x4E8B;&#x5BF9;&#x8C61;&#x6D88;&#x606F;&#xFF0C;&#x5B8C;&#x6210;&#x76F8;&#x5E94;&#x7684;&#x4EFB;&#x52A1;</p>
+<p>4)    ConcreteColleague &#x5177;&#x4F53;&#x7684;&#x540C;&#x4E8B;&#x7C7B;&#xFF0C;&#x4F1A;&#x6709;&#x5F88;&#x591A;, &#x6BCF;&#x4E2A;&#x540C;&#x4E8B;&#x53EA;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x7684;&#x884C;&#x4E3A;&#xFF0C; &#x800C;&#x4E0D;&#x4E86;&#x89E3;&#x5176;&#x4ED6;&#x540C;&#x4E8B;&#x7C7B;&#x7684;&#x884C;&#x4E3A;(&#x65B9;&#x6CD5;)&#xFF0C; &#x4F46;  &#x662F;&#x4ED6;&#x4EEC;&#x90FD;&#x4F9D;&#x8D56;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;</p>
+<h2 id="216-----&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;-&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x7BA1;&#x7406;">21.6     &#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;-&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x7BA1;&#x7406;</h2>
+<p>1)    &#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x8981;&#x6C42;</p>
+<p>&#x5B8C;&#x6210;&#x524D;&#x9762;&#x7684;&#x667A;&#x80FD;&#x5BB6;&#x5EAD;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x4F7F;&#x7528;&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;</p>
+<p>2)     &#x601D;&#x8DEF;&#x5206;&#x6790;&#x548C;&#x56FE;&#x89E3;(&#x7C7B;&#x56FE;)</p>
+<p><img src="images/mediator4.jpg" alt="img"></p>
+<p>3)   &#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<p> smarthouse.zip</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-comment">//&#x5177;&#x4F53;&#x7684;&#x540C;&#x4E8B;&#x7C7B;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Alarm</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Colleague</span> </span>{
+
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Alarm</span><span class="hljs-params">(Mediator mediator, String name)</span> </span>{
+        <span class="hljs-keyword">super</span>(mediator, name);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+        <span class="hljs-comment">//&#x5728;&#x521B;&#x5EFA;Alarm &#x540C;&#x4E8B;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5C06;&#x81EA;&#x5DF1;&#x653E;&#x5165;&#x5230;ConcreteMediator &#x5BF9;&#x8C61;&#x4E2D;[&#x96C6;&#x5408;]</span>
+        mediator.Register(name, <span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendAlarm</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange)</span> </span>{
+        SendMessage(stateChange);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-comment">//&#x8C03;&#x7528;&#x7684;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;&#x7684;getMessage</span>
+        <span class="hljs-keyword">this</span>.GetMediator().GetMessage(stateChange, <span class="hljs-keyword">this</span>.name);
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClientTest</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;</span>
+        Mediator mediator = <span class="hljs-keyword">new</span> ConcreteMediator();
+
+        <span class="hljs-comment">//&#x521B;&#x5EFA;Alarm &#x5E76;&#x4E14;&#x52A0;&#x5165;&#x5230;  ConcreteMediator &#x5BF9;&#x8C61;&#x7684;HashMap</span>
+        Alarm alarm = <span class="hljs-keyword">new</span> Alarm(mediator, <span class="hljs-string">&quot;alarm&quot;</span>);
+
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E86;CoffeeMachine &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;  &#x4E14;&#x52A0;&#x5165;&#x5230;  ConcreteMediator &#x5BF9;&#x8C61;&#x7684;HashMap</span>
+        CoffeeMachine coffeeMachine = <span class="hljs-keyword">new</span> CoffeeMachine(mediator,
+                <span class="hljs-string">&quot;coffeeMachine&quot;</span>);
+
+        <span class="hljs-comment">//&#x521B;&#x5EFA; Curtains , &#x5E76;  &#x4E14;&#x52A0;&#x5165;&#x5230;  ConcreteMediator &#x5BF9;&#x8C61;&#x7684;HashMap</span>
+        Curtains curtains = <span class="hljs-keyword">new</span> Curtains(mediator, <span class="hljs-string">&quot;curtains&quot;</span>);
+        TV tV = <span class="hljs-keyword">new</span> TV(mediator, <span class="hljs-string">&quot;TV&quot;</span>);
+
+        <span class="hljs-comment">//&#x8BA9;&#x95F9;&#x949F;&#x53D1;&#x51FA;&#x6D88;&#x606F;</span>
+        alarm.SendAlarm(<span class="hljs-number">0</span>);
+        coffeeMachine.FinishCoffee();
+        alarm.SendAlarm(<span class="hljs-number">1</span>);
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CoffeeMachine</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Colleague</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CoffeeMachine</span><span class="hljs-params">(Mediator mediator, String name)</span> </span>{
+        <span class="hljs-keyword">super</span>(mediator, name);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+        mediator.Register(name, <span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">this</span>.GetMediator().GetMessage(stateChange, <span class="hljs-keyword">this</span>.name);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StartCoffee</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;It&apos;s time to startcoffee!&quot;</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">FinishCoffee</span><span class="hljs-params">()</span> </span>{
+
+        System.out.println(<span class="hljs-string">&quot;After 5 minutes!&quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;Coffee is ok!&quot;</span>);
+        SendMessage(<span class="hljs-number">0</span>);
+    }
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-comment">//&#x540C;&#x4E8B;&#x62BD;&#x8C61;&#x7C7B;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Colleague</span> </span>{
+    <span class="hljs-keyword">private</span> Mediator mediator;
+    <span class="hljs-keyword">public</span> String name;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Colleague</span><span class="hljs-params">(Mediator mediator, String name)</span> </span>{
+
+        <span class="hljs-keyword">this</span>.mediator = mediator;
+        <span class="hljs-keyword">this</span>.name = name;
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Mediator <span class="hljs-title">GetMediator</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.mediator;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange)</span></span>;
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-keyword">import</span> java.util.HashMap;
+
+<span class="hljs-comment">//&#x5177;&#x4F53;&#x7684;&#x4E2D;&#x4ECB;&#x8005;&#x7C7B;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteMediator</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mediator</span> </span>{
+    <span class="hljs-comment">//&#x96C6;&#x5408;&#xFF0C;&#x653E;&#x5165;&#x6240;&#x6709;&#x7684;&#x540C;&#x4E8B;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">private</span> HashMap&lt;String, Colleague&gt; colleagueMap;
+    <span class="hljs-keyword">private</span> HashMap&lt;String, String&gt; interMap;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ConcreteMediator</span><span class="hljs-params">()</span> </span>{
+        colleagueMap = <span class="hljs-keyword">new</span> HashMap&lt;String, Colleague&gt;();
+        interMap = <span class="hljs-keyword">new</span> HashMap&lt;String, String&gt;();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Register</span><span class="hljs-params">(String colleagueName, Colleague colleague)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        colleagueMap.put(colleagueName, colleague);
+
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+
+        <span class="hljs-keyword">if</span> (colleague <span class="hljs-keyword">instanceof</span> Alarm) {
+            interMap.put(<span class="hljs-string">&quot;Alarm&quot;</span>, colleagueName);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (colleague <span class="hljs-keyword">instanceof</span> CoffeeMachine) {
+            interMap.put(<span class="hljs-string">&quot;CoffeeMachine&quot;</span>, colleagueName);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (colleague <span class="hljs-keyword">instanceof</span> TV) {
+            interMap.put(<span class="hljs-string">&quot;TV&quot;</span>, colleagueName);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (colleague <span class="hljs-keyword">instanceof</span> Curtains) {
+            interMap.put(<span class="hljs-string">&quot;Curtains&quot;</span>, colleagueName);
+        }
+
+    }
+
+    <span class="hljs-comment">//&#x5177;&#x4F53;&#x4E2D;&#x4ECB;&#x8005;&#x7684;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment">//1. &#x6839;&#x636E;&#x5F97;&#x5230;&#x6D88;&#x606F;&#xFF0C;&#x5B8C;&#x6210;&#x5BF9;&#x5E94;&#x4EFB;&#x52A1;</span>
+    <span class="hljs-comment">//2. &#x4E2D;&#x4ECB;&#x8005;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x534F;&#x8C03;&#x5404;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x540C;&#x4E8B;&#x5BF9;&#x8C61;&#xFF0C;&#x5B8C;&#x6210;&#x4EFB;&#x52A1;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange, String colleagueName)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+
+        <span class="hljs-comment">//&#x5904;&#x7406;&#x95F9;&#x949F;&#x53D1;&#x51FA;&#x7684;&#x6D88;&#x606F;</span>
+        <span class="hljs-keyword">if</span> (colleagueMap.get(colleagueName) <span class="hljs-keyword">instanceof</span> Alarm) {
+            <span class="hljs-keyword">if</span> (stateChange == <span class="hljs-number">0</span>) {
+                ((CoffeeMachine) (colleagueMap.get(interMap
+                        .get(<span class="hljs-string">&quot;CoffeeMachine&quot;</span>)))).StartCoffee();
+                ((TV) (colleagueMap.get(interMap.get(<span class="hljs-string">&quot;TV&quot;</span>)))).StartTv();
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stateChange == <span class="hljs-number">1</span>) {
+                ((TV) (colleagueMap.get(interMap.get(<span class="hljs-string">&quot;TV&quot;</span>)))).StopTv();
+            }
+
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (colleagueMap.get(colleagueName) <span class="hljs-keyword">instanceof</span> CoffeeMachine) {
+            ((Curtains) (colleagueMap.get(interMap.get(<span class="hljs-string">&quot;Curtains&quot;</span>))))
+                    .UpCurtains();
+
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (colleagueMap.get(colleagueName) <span class="hljs-keyword">instanceof</span> TV) {<span class="hljs-comment">//&#x5982;&#x679C;TV&#x53D1;&#x73B0;&#x6D88;&#x606F;</span>
+
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (colleagueMap.get(colleagueName) <span class="hljs-keyword">instanceof</span> Curtains) {
+            <span class="hljs-comment">//&#x5982;&#x679C;&#x662F;&#x4EE5;&#x7A97;&#x5E18;&#x53D1;&#x51FA;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x8FD9;&#x91CC;&#x5904;&#x7406;...</span>
+        }
+
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Curtains</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Colleague</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Curtains</span><span class="hljs-params">(Mediator mediator, String name)</span> </span>{
+        <span class="hljs-keyword">super</span>(mediator, name);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+        mediator.Register(name, <span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">this</span>.GetMediator().GetMessage(stateChange, <span class="hljs-keyword">this</span>.name);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">UpCurtains</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;I am holding Up Curtains!&quot;</span>);
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mediator</span> </span>{
+    <span class="hljs-comment">//&#x5C06;&#x7ED9;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;&#xFF0C;&#x52A0;&#x5165;&#x5230;&#x96C6;&#x5408;&#x4E2D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Register</span><span class="hljs-params">(String colleagueName, Colleague colleague)</span></span>;
+
+    <span class="hljs-comment">//&#x63A5;&#x6536;&#x6D88;&#x606F;, &#x5177;&#x4F53;&#x7684;&#x540C;&#x4E8B;&#x5BF9;&#x8C61;&#x53D1;&#x51FA;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">GetMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange, String colleagueName)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">()</span></span>;
+}
+<span class="hljs-keyword">package</span> com.atguigu.mediator.smarthouse;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TV</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Colleague</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TV</span><span class="hljs-params">(Mediator mediator, String name)</span> </span>{
+        <span class="hljs-keyword">super</span>(mediator, name);
+        <span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+        mediator.Register(name, <span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SendMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> stateChange)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">this</span>.GetMediator().GetMessage(stateChange, <span class="hljs-keyword">this</span>.name);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StartTv</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot;It&apos;s time to StartTv!&quot;</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StopTv</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot;StopTv!&quot;</span>);
+    }
+}
+</code></pre>
+<h2 id="217-----&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;">21.7     &#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;</h2>
+<p>1)    &#x591A;&#x4E2A;&#x7C7B;&#x76F8;&#x4E92;&#x8026;&#x5408;&#xFF0C;&#x4F1A;&#x5F62;&#x6210;&#x7F51;&#x72B6;&#x7ED3;&#x6784;, &#x4F7F;&#x7528;&#x4E2D;&#x4ECB;&#x8005;&#x6A21;&#x5F0F;&#x5C06;&#x7F51;&#x72B6;&#x7ED3;&#x6784;&#x5206;&#x79BB;&#x4E3A;&#x661F;&#x578B;&#x7ED3;&#x6784;&#xFF0C;&#x8FDB;&#x884C;&#x89E3;&#x8026;</p>
+<p>2)    &#x51CF;&#x5C11;&#x7C7B;&#x95F4;&#x4F9D;&#x8D56;&#xFF0C;&#x964D;&#x4F4E;&#x4E86;&#x8026;&#x5408;&#xFF0C;&#x7B26;&#x5408;&#x8FEA;&#x7C73;&#x7279;&#x539F;&#x5219;</p>
+<p>3)    &#x4E2D;&#x4ECB;&#x8005;&#x627F;&#x62C5;&#x4E86;&#x8F83;&#x591A;&#x7684;&#x8D23;&#x4EFB;&#xFF0C;&#x4E00;&#x65E6;&#x4E2D;&#x4ECB;&#x8005;&#x51FA;&#x73B0;&#x4E86;&#x95EE;&#x9898;&#xFF0C;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x5C31;&#x4F1A;&#x53D7;&#x5230;&#x5F71;&#x54CD;</p>
+<p>4)    &#x5982;&#x679C;&#x8BBE;&#x8BA1;&#x4E0D;&#x5F53;&#xFF0C;&#x4E2D;&#x4ECB;&#x8005;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x53D8;&#x5F97;&#x8FC7;&#x4E8E;&#x590D;&#x6742;&#xFF0C;&#x8FD9;&#x70B9;&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第20章 观察者模式.html" class="navigation navigation-prev " aria-label="Previous page: 第20章 观察者模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第22章 备忘录模式.html" class="navigation navigation-next " aria-label="Next page: 第22章 备忘录模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第21章 中介者模式","level":"1.20","depth":1,"next":{"title":"第22章 备忘录模式","level":"1.21","depth":1,"path":"第22章 备忘录模式.md","ref":"第22章 备忘录模式.md","articles":[]},"previous":{"title":"第20章 观察者模式","level":"1.19","depth":1,"path":"第20章 观察者模式.md","ref":"第20章 观察者模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第21章 中介者模式.md","mtime":"2020-04-24T13:55:08.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

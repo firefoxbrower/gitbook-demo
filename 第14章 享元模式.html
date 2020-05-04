@@ -1,0 +1,750 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第14章 享元模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第15章 代理模式.html" />
+    
+    
+    <link rel="prev" href="第13章 外观模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第14章 享元模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-14-&#x7AE0;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;">&#x7B2C; 14 &#x7AE0;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</h1>
+<h2 id="141----&#x5C55;&#x793A;&#x7F51;&#x7AD9;&#x9879;&#x76EE;&#x9700;&#x6C42;">14.1    &#x5C55;&#x793A;&#x7F51;&#x7AD9;&#x9879;&#x76EE;&#x9700;&#x6C42;</h2>
+<p>&#x5C0F;&#x578B;&#x7684;&#x5916;&#x5305;&#x9879;&#x76EE;&#xFF0C;&#x7ED9;&#x5BA2;&#x6237; A &#x505A;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x5C55;&#x793A;&#x7F51;&#x7AD9;&#xFF0C;&#x5BA2;&#x6237; A &#x7684;&#x670B;&#x53CB;&#x611F;&#x89C9;&#x6548;&#x679C;&#x4E0D;&#x9519;&#xFF0C;&#x4E5F;&#x5E0C;&#x671B;&#x505A;&#x8FD9;&#x6837;&#x7684;&#x4EA7;&#x54C1;&#x5C55;&#x793A;&#x7F51;&#x7AD9;&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x6C42;&#x90FD;&#x6709;&#x4E9B;&#x4E0D;&#x540C;&#xFF1A;</p>
+<p>1)   &#x6709;&#x5BA2;&#x6237;&#x8981;&#x6C42;&#x4EE5;&#x65B0;&#x95FB;&#x7684;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;</p>
+<p>2)   &#x6709;&#x5BA2;&#x6237;&#x4EBA;&#x8981;&#x6C42;&#x4EE5;&#x535A;&#x5BA2;&#x7684;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;</p>
+<p>3)   &#x6709;&#x5BA2;&#x6237;&#x5E0C;&#x671B;&#x4EE5;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#x7684;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;</p>
+<h2 id="142----&#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x7F51;&#x7AD9;&#x5C55;&#x73B0;&#x9879;&#x76EE;">14.2    &#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x7F51;&#x7AD9;&#x5C55;&#x73B0;&#x9879;&#x76EE;</h2>
+<p>1)   &#x76F4;&#x63A5;&#x590D;&#x5236;&#x7C98;&#x8D34;&#x4E00;&#x4EFD;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x5BA2;&#x6237;&#x4E0D;&#x540C;&#x8981;&#x6C42;&#xFF0C;&#x8FDB;&#x884C;&#x5B9A;&#x5236;&#x4FEE;&#x6539;</p>
+<p>2)   &#x7ED9;&#x6BCF;&#x4E2A;&#x7F51;&#x7AD9;&#x79DF;&#x7528;&#x4E00;&#x4E2A;&#x7A7A;&#x95F4;</p>
+<p>3)    &#x65B9;&#x6848;&#x8BBE;&#x8BA1;&#x793A;&#x610F;&#x56FE;</p>
+<p><img src="images/flyweight1.jpg" alt="img"></p>
+<h2 id="143----&#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x7F51;&#x7AD9;&#x5C55;&#x73B0;&#x9879;&#x76EE;-&#x95EE;&#x9898;&#x5206;&#x6790;">14.3    &#x4F20;&#x7EDF;&#x65B9;&#x6848;&#x89E3;&#x51B3;&#x7F51;&#x7AD9;&#x5C55;&#x73B0;&#x9879;&#x76EE;-&#x95EE;&#x9898;&#x5206;&#x6790;</h2>
+<p>1)    &#x9700;&#x8981;&#x7684;&#x7F51;&#x7AD9;&#x7ED3;&#x6784;&#x76F8;&#x4F3C;&#x5EA6;&#x5F88;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x90FD;&#x4E0D;&#x662F;&#x9AD8;&#x8BBF;&#x95EE;&#x91CF;&#x7F51;&#x7AD9;&#xFF0C;&#x5982;&#x679C;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x865A;&#x62DF;&#x7A7A;&#x95F4;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4E00;&#x4E2A;&#x76F8;&#x540C;&#x7F51;&#x7AD9;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x5F88;&#x591A;&#xFF0C;&#x9020;&#x6210;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8D44;&#x6E90;&#x6D6A;&#x8D39;</p>
+<p>2)    &#x89E3;&#x51B3;&#x601D;&#x8DEF;&#xFF1A;&#x6574;&#x5408;&#x5230;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x4E2D;&#xFF0C;&#x5171;&#x4EAB;&#x5176;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x6570;&#x636E;&#xFF0C;&#x5BF9;&#x4E8E;&#x786C;&#x76D8;&#x3001;&#x5185;&#x5B58;&#x3001;CPU&#x3001;&#x6570;&#x636E;&#x5E93;&#x7A7A;&#x95F4;&#x7B49;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;&#x90FD;&#x53EF;&#x4EE5;&#x8FBE;&#x6210;&#x5171;&#x4EAB;&#xFF0C;&#x51CF;&#x5C11;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;</p>
+<p>3)    &#x5BF9;&#x4E8E;&#x4EE3;&#x7801;&#x6765;&#x8BF4;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x4E00;&#x4EFD;&#x5B9E;&#x4F8B;&#xFF0C;&#x7EF4;&#x62A4;&#x548C;&#x6269;&#x5C55;&#x90FD;&#x66F4;&#x52A0;&#x5BB9;&#x6613;</p>
+<p>4)    &#x4E0A;&#x9762;&#x7684;&#x89E3;&#x51B3;&#x601D;&#x8DEF;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; &#x4EAB;&#x5143;&#x6A21;&#x5F0F; &#x6765;&#x89E3;&#x51B3;</p>
+<h2 id="144----&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">14.4    &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h2>
+<p>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</p>
+<p>1)   &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#xFF08;Flyweight Pattern&#xFF09; &#x4E5F;&#x53EB; &#x8747;&#x91CF;&#x6A21;&#x5F0F;: &#x8FD0;&#x7528;&#x5171;&#x4EAB;&#x6280;&#x672F;&#x6709;&#x6548;&#x5730;&#x652F;&#x6301;&#x5927;&#x91CF;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x5BF9;&#x8C61;</p>
+<p>2)   &#x5E38;&#x7528;&#x4E8E;&#x7CFB;&#x7EDF;&#x5E95;&#x5C42;&#x5F00;&#x53D1;&#xFF0C;&#x89E3;&#x51B3;&#x7CFB;&#x7EDF;&#x7684;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;&#x50CF;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#xFF0C;&#x91CC;&#x9762;&#x90FD;&#x662F;&#x521B;&#x5EFA;&#x597D;&#x7684;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x8FD9;&#x4E9B;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x4E2D;&#x6709;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x5219;&#x76F4;&#x63A5;&#x62FF;&#x6765;&#x7528;&#xFF0C;&#x907F;&#x514D;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;</p>
+<p>3)   &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x80FD;&#x591F;&#x89E3;&#x51B3;&#x91CD;&#x590D;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x6D6A;&#x8D39;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x7CFB;&#x7EDF;&#x4E2D;&#x6709;&#x5927;&#x91CF;&#x76F8;&#x4F3C;&#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x7F13;&#x51B2;&#x6C60;&#x65F6;&#x3002;&#x4E0D;&#x9700;&#x603B;&#x662F;&#x521B;&#x5EFA;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x7F13;&#x51B2;&#x6C60;&#x91CC;&#x62FF;&#x3002;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;&#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x9AD8;&#x6548;&#x7387;</p>
+<p>4)   &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7ECF;&#x5178;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x5C31;&#x662F;&#x6C60;&#x6280;&#x672F;&#x4E86;&#xFF0C;String &#x5E38;&#x91CF;&#x6C60;&#x3001;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;&#x3001;&#x7F13;&#x51B2;&#x6C60;&#x7B49;&#x7B49;&#x90FD;&#x662F;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x662F;&#x6C60;&#x6280;&#x672F;&#x7684;&#x91CD;&#x8981;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</p>
+<p><img src="images/flyweight2.jpg" alt="img"></p>
+<h2 id="145----&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7684;&#x539F;&#x7406;&#x7C7B;&#x56FE;">14.5    &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7684;&#x539F;&#x7406;&#x7C7B;&#x56FE;</h2>
+<p><img src="images/flyweight3.jpg" alt="img"></p>
+<p>&#xD8; &#x5BF9;&#x7C7B;&#x56FE;&#x7684;&#x8BF4;&#x660E;</p>
+<p>&#x5BF9;&#x539F;&#x7406;&#x56FE;&#x7684;&#x8BF4;&#x660E;-&#x5373;(&#x6A21;&#x5F0F;&#x7684;&#x89D2;&#x8272;&#x53CA;&#x804C;&#x8D23;)</p>
+<p>1)    FlyWeight &#x662F;&#x62BD;&#x8C61;&#x7684;&#x4EAB;&#x5143;&#x89D2;&#x8272;, &#x4ED6;&#x662F;&#x4EA7;&#x54C1;&#x7684;&#x62BD;&#x8C61;&#x7C7B;, &#x540C;&#x65F6;&#x5B9A;&#x4E49;&#x51FA;&#x5BF9;&#x8C61;&#x7684;&#x5916;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5185;&#x90E8;&#x72B6;&#x6001;(&#x540E;&#x9762;&#x4ECB;&#x7ECD;) &#x7684;&#x63A5;&#x53E3;&#x6216;&#x5B9E;&#x73B0;</p>
+<p>2)    ConcreteFlyWeight &#x662F;&#x5177;&#x4F53;&#x7684;&#x4EAB;&#x5143;&#x89D2;&#x8272;&#xFF0C;&#x662F;&#x5177;&#x4F53;&#x7684;&#x4EA7;&#x54C1;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x89D2;&#x8272;&#x5B9A;&#x4E49;&#x76F8;&#x5173;&#x4E1A;&#x52A1;</p>
+<p>3)    UnSharedConcreteFlyWeight &#x662F;&#x4E0D;&#x53EF;&#x5171;&#x4EAB;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x4EAB;&#x5143;&#x5DE5;&#x5382;&#x3002;</p>
+<p>4)    FlyWeightFactory  &#x4EAB;&#x5143;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x6C60;&#x5BB9;&#x5668;(&#x96C6;&#x5408;)&#xFF0C; &#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x4ECE;&#x6C60;&#x4E2D;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x65B9;&#x6CD5;</p>
+<h2 id="146----&#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5916;&#x90E8;&#x72B6;&#x6001;">14.6    &#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5916;&#x90E8;&#x72B6;&#x6001;</h2>
+<p>&#x6BD4;&#x5982;&#x56F4;&#x68CB;&#x3001;&#x4E94;&#x5B50;&#x68CB;&#x3001;&#x8DF3;&#x68CB;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x6709;&#x5927;&#x91CF;&#x7684;&#x68CB;&#x5B50;&#x5BF9;&#x8C61;&#xFF0C;&#x56F4;&#x68CB;&#x548C;&#x4E94;&#x5B50;&#x68CB;&#x53EA;&#x6709;&#x9ED1;&#x767D;&#x4E24;&#x8272;&#xFF0C;&#x8DF3;&#x68CB;&#x989C;&#x8272;&#x591A;&#x4E00;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x68CB;&#x5B50;&#x989C;&#x8272;&#x5C31;&#x662F;&#x68CB;&#x5B50;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF1B;&#x800C;&#x5404;&#x4E2A;&#x68CB;&#x5B50;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x522B;&#x5C31;&#x662F;&#x4F4D;&#x7F6E;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x843D;&#x5B50;&#x540E;&#xFF0C;&#x843D;&#x5B50;&#x989C;&#x8272;&#x662F;&#x5B9A;&#x7684;&#xFF0C;&#x4F46;&#x4F4D;&#x7F6E;&#x662F;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x68CB;&#x5B50;&#x5750;&#x6807;&#x5C31;&#x662F;&#x68CB;&#x5B50;&#x7684;&#x5916;&#x90E8;&#x72B6;&#x6001;</p>
+<p>1)    &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x63D0;&#x51FA;&#x4E86;&#x4E24;&#x4E2A;&#x8981;&#x6C42;&#xFF1A;&#x7EC6;&#x7C92;&#x5EA6;&#x548C;&#x5171;&#x4EAB;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x91CC;&#x5C31;&#x6D89;&#x53CA;&#x5230;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5916;&#x90E8;&#x72B6;&#x6001;&#x4E86;&#xFF0C;&#x5373;&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x4FE1;&#x606F;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5916;&#x90E8;&#x72B6;&#x6001;</p>
+<p>2)    &#x5185;&#x90E8;&#x72B6;&#x6001;&#x6307;&#x5BF9;&#x8C61;&#x5171;&#x4EAB;&#x51FA;&#x6765;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5B58;&#x50A8;&#x5728;&#x4EAB;&#x5143;&#x5BF9;&#x8C61;&#x5185;&#x90E8;&#x4E14;&#x4E0D;&#x4F1A;&#x968F;&#x73AF;&#x5883;&#x7684;&#x6539;&#x53D8;&#x800C;&#x6539;&#x53D8;</p>
+<p>3)    &#x5916;&#x90E8;&#x72B6;&#x6001;&#x6307;&#x5BF9;&#x8C61;&#x5F97;&#x4EE5;&#x4F9D;&#x8D56;&#x7684;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#xFF0C;&#x662F;&#x968F;&#x73AF;&#x5883;&#x6539;&#x53D8;&#x800C;&#x6539;&#x53D8;&#x7684;&#x3001;&#x4E0D;&#x53EF;&#x5171;&#x4EAB;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<p>4)    &#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;&#x56F4;&#x68CB;&#x7406;&#x8BBA;&#x4E0A;&#x6709; 361 &#x4E2A;&#x7A7A;&#x4F4D;&#x53EF;&#x4EE5;&#x653E;&#x68CB;&#x5B50;&#xFF0C;&#x6BCF;&#x76D8;&#x68CB;&#x90FD;&#x6709;&#x53EF;&#x80FD;&#x6709;&#x4E24;&#x4E09;&#x767E;&#x4E2A;&#x68CB;&#x5B50;&#x5BF9;&#x8C61;&#x4EA7;&#x751F;&#xFF0C;&#x56E0;&#x4E3A;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x6709;&#x9650;&#xFF0C;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F88;&#x96BE;&#x652F;&#x6301;&#x66F4;&#x591A;&#x7684;&#x73A9;&#x5BB6;&#x73A9;&#x56F4;&#x68CB;&#x6E38;&#x620F;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x6765;&#x5904;&#x7406;&#x68CB;&#x5B50;&#xFF0C;&#x90A3;&#x4E48;&#x68CB;&#x5B50;&#x5BF9;&#x8C61;&#x5C31;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x5230;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5F88;&#x597D;&#x7684;&#x89E3;&#x51B3;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x5F00;&#x9500;&#x95EE;&#x9898;</p>
+<h2 id="147----&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x7F51;&#x7AD9;&#x5C55;&#x73B0;&#x9879;&#x76EE;">14.7    &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x7F51;&#x7AD9;&#x5C55;&#x73B0;&#x9879;&#x76EE;</h2>
+<p>1)   &#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x8981;&#x6C42;</p>
+<p>&#x4F7F;&#x7528;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x5B8C;&#x6210;&#xFF0C;&#x524D;&#x9762;&#x63D0;&#x51FA;&#x7684;&#x7F51;&#x7AD9;&#x5916;&#x5305;&#x95EE;&#x9898;</p>
+<p>2)   &#x601D;&#x8DEF;&#x5206;&#x6790;&#x548C;&#x56FE;&#x89E3;(&#x7C7B;&#x56FE;)</p>
+<p> <img src="images/flyweight4.jpg" alt="img"></p>
+<p>3)   &#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.flyweight;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;</span>
+        WebSiteFactory factory = <span class="hljs-keyword">new</span> WebSiteFactory();
+
+        <span class="hljs-comment">// &#x5BA2;&#x6237;&#x8981;&#x4E00;&#x4E2A;&#x4EE5;&#x65B0;&#x95FB;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;&#x7684;&#x7F51;&#x7AD9;</span>
+        WebSite webSite1 = factory.getWebSiteCategory(<span class="hljs-string">&quot;&#x65B0;&#x95FB;&quot;</span>);
+
+
+        webSite1.use(<span class="hljs-keyword">new</span> User(<span class="hljs-string">&quot;tom&quot;</span>));
+
+        <span class="hljs-comment">// &#x5BA2;&#x6237;&#x8981;&#x4E00;&#x4E2A;&#x4EE5;&#x535A;&#x5BA2;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;&#x7684;&#x7F51;&#x7AD9;</span>
+        WebSite webSite2 = factory.getWebSiteCategory(<span class="hljs-string">&quot;&#x535A;&#x5BA2;&quot;</span>);
+
+        webSite2.use(<span class="hljs-keyword">new</span> User(<span class="hljs-string">&quot;jack&quot;</span>));
+
+        <span class="hljs-comment">// &#x5BA2;&#x6237;&#x8981;&#x4E00;&#x4E2A;&#x4EE5;&#x535A;&#x5BA2;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;&#x7684;&#x7F51;&#x7AD9;</span>
+        WebSite webSite3 = factory.getWebSiteCategory(<span class="hljs-string">&quot;&#x535A;&#x5BA2;&quot;</span>);
+
+        webSite3.use(<span class="hljs-keyword">new</span> User(<span class="hljs-string">&quot;smith&quot;</span>));
+
+        <span class="hljs-comment">// &#x5BA2;&#x6237;&#x8981;&#x4E00;&#x4E2A;&#x4EE5;&#x535A;&#x5BA2;&#x5F62;&#x5F0F;&#x53D1;&#x5E03;&#x7684;&#x7F51;&#x7AD9;</span>
+        WebSite webSite4 = factory.getWebSiteCategory(<span class="hljs-string">&quot;&#x535A;&#x5BA2;&quot;</span>);
+
+        webSite4.use(<span class="hljs-keyword">new</span> User(<span class="hljs-string">&quot;king&quot;</span>));
+
+        System.out.println(<span class="hljs-string">&quot;&#x7F51;&#x7AD9;&#x7684;&#x5206;&#x7C7B;&#x5171;=&quot;</span> + factory.getWebSiteCount());
+    }
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.flyweight;
+
+<span class="hljs-comment">//&#x5177;&#x4F53;&#x7F51;&#x7AD9;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteWebSite</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">WebSite</span> </span>{
+
+    <span class="hljs-comment">//&#x5171;&#x4EAB;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5185;&#x90E8;&#x72B6;&#x6001;</span>
+    <span class="hljs-keyword">private</span> String type = <span class="hljs-string">&quot;&quot;</span>; <span class="hljs-comment">//&#x7F51;&#x7AD9;&#x53D1;&#x5E03;&#x7684;&#x5F62;&#x5F0F;(&#x7C7B;&#x578B;)</span>
+
+
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ConcreteWebSite</span><span class="hljs-params">(String type)</span> </span>{
+
+        <span class="hljs-keyword">this</span>.type = type;
+    }
+
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">use</span><span class="hljs-params">(User user)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        System.out.println(<span class="hljs-string">&quot;&#x7F51;&#x7AD9;&#x7684;&#x53D1;&#x5E03;&#x5F62;&#x5F0F;&#x4E3A;:&quot;</span> + type + <span class="hljs-string">&quot; &#x5728;&#x4F7F;&#x7528;&#x4E2D; .. &#x4F7F;&#x7528;&#x8005;&#x662F;&quot;</span> + user.getName());
+    }
+
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.flyweight;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+
+    <span class="hljs-keyword">private</span> String name;
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">User</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+
+
+}
+<span class="hljs-keyword">package</span> com.atguigu.flyweight;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebSite</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">use</span><span class="hljs-params">(User user)</span></span>;<span class="hljs-comment">//&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</span>
+}
+<span class="hljs-keyword">package</span> com.atguigu.flyweight;
+
+<span class="hljs-keyword">import</span> java.util.HashMap;
+
+<span class="hljs-comment">// &#x7F51;&#x7AD9;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x538B;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WebSiteFactory</span> </span>{
+
+
+    <span class="hljs-comment">//&#x96C6;&#x5408;&#xFF0C; &#x5145;&#x5F53;&#x6C60;&#x7684;&#x4F5C;&#x7528;</span>
+    <span class="hljs-keyword">private</span> HashMap&lt;String, ConcreteWebSite&gt; pool = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+
+    <span class="hljs-comment">//&#x6839;&#x636E;&#x7F51;&#x7AD9;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5C31;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x5E76;&#x653E;&#x5165;&#x5230;&#x6C60;&#x4E2D;,&#x5E76;&#x8FD4;&#x56DE;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> WebSite <span class="hljs-title">getWebSiteCategory</span><span class="hljs-params">(String type)</span> </span>{
+        <span class="hljs-keyword">if</span>(!pool.containsKey(type)) {
+            <span class="hljs-comment">//&#x5C31;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x5E76;&#x653E;&#x5165;&#x5230;&#x6C60;&#x4E2D;</span>
+            pool.put(type, <span class="hljs-keyword">new</span> ConcreteWebSite(type));
+        }
+
+        <span class="hljs-keyword">return</span> (WebSite)pool.get(type);
+    }
+
+    <span class="hljs-comment">//&#x83B7;&#x53D6;&#x7F51;&#x7AD9;&#x5206;&#x7C7B;&#x7684;&#x603B;&#x6570; (&#x6C60;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x7F51;&#x7AD9;&#x7C7B;&#x578B;)</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getWebSiteCount</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> pool.size();
+    }
+}
+</code></pre>
+<h2 id="148----&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x5728;-jdk-interger-&#x7684;&#x5E94;&#x7528;&#x6E90;&#x7801;&#x5206;&#x6790;">14.8    &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x5728; JDK-Interger &#x7684;&#x5E94;&#x7528;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p>1)   Integer &#x4E2D;&#x7684;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</p>
+<p>2)   &#x4EE3;&#x7801;&#x5206;&#x6790;+Debug &#x6E90;&#x7801;+&#x8BF4;&#x660E;</p>
+<p><img src="images/flyweight5.jpg" alt="img"></p>
+<p>&#xD8; &#x4EE3;&#x7801;&#x8BF4;&#x660E;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.jdk;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FlyWeight</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-comment">//&#x5982;&#x679C; Integer.valueOf(x) x &#x5728;  -128 --- 127 &#x76F4;&#x63A5;&#xFF0C;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x8FD4;&#x56DE;,&#x5982;&#x679C;&#x4E0D;&#x5728;</span>
+        <span class="hljs-comment">//&#x8303;&#x56F4;&#x7C7B;&#xFF0C;&#x5219;&#x4ECD;&#x7136; new </span>
+
+        <span class="hljs-comment">//&#x5C0F;&#x7ED3;:</span>
+        <span class="hljs-comment">//1. &#x5728;valueOf &#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5148;&#x5224;&#x65AD;&#x503C;&#x662F;&#x5426;&#x5728; IntegerCache &#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5728;&#xFF0C;&#x5C31;&#x521B;&#x5EFA;&#x65B0;&#x7684;Integer(new), &#x5426;&#x5219;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x4ECE; &#x7F13;&#x5B58;&#x6C60;&#x8FD4;&#x56DE;</span>
+        <span class="hljs-comment">//2. valueOf &#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x5230;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</span>
+        <span class="hljs-comment">//3. &#x5982;&#x679C;&#x4F7F;&#x7528;valueOf &#x65B9;&#x6CD5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;Integer &#x5B9E;&#x4F8B;&#xFF0C;&#x8303;&#x56F4;&#x5728; -128 - 127 &#xFF0C;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x6BD4; new &#x5FEB;</span>
+
+
+        Integer x = Integer.valueOf(<span class="hljs-number">127</span>); <span class="hljs-comment">// &#x5F97;&#x5230; x&#x5B9E;&#x4F8B;&#xFF0C;&#x7C7B;&#x578B; Integer</span>
+        Integer y = <span class="hljs-keyword">new</span> Integer(<span class="hljs-number">127</span>); <span class="hljs-comment">// &#x5F97;&#x5230; y &#x5B9E;&#x4F8B;&#xFF0C;&#x7C7B;&#x578B; Integer</span>
+        Integer z = Integer.valueOf(<span class="hljs-number">127</span>);<span class="hljs-comment">//..</span>
+        Integer w = <span class="hljs-keyword">new</span> Integer(<span class="hljs-number">127</span>);
+
+
+
+        System.out.println(x.equals(y)); <span class="hljs-comment">// &#x5927;&#x5C0F;&#xFF0C;true</span>
+        System.out.println(x == y ); <span class="hljs-comment">//  false</span>
+        System.out.println(x == z ); <span class="hljs-comment">// true</span>
+        System.out.println(w == x ); <span class="hljs-comment">// false</span>
+        System.out.println(w == y ); <span class="hljs-comment">// false</span>
+
+
+        Integer x1 = Integer.valueOf(<span class="hljs-number">200</span>);
+        Integer x2 = Integer.valueOf(<span class="hljs-number">200</span>);
+        System.out.println(<span class="hljs-string">&quot;x1==x2&quot;</span> + (x1 == x2)); <span class="hljs-comment">// false</span>
+    }
+}
+</code></pre>
+<h2 id="149----&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;">14.9    &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;</h2>
+<p>1)   &#x5728;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#xFF0C;&#x201C;&#x4EAB;&#x201D;&#x5C31;&#x8868;&#x793A;&#x5171;&#x4EAB;&#xFF0C;&#x201C;&#x5143;&#x201D;&#x8868;&#x793A;&#x5BF9;&#x8C61;</p>
+<p>2)   &#x7CFB;&#x7EDF;&#x4E2D;&#x6709;&#x5927;&#x91CF;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x6D88;&#x8017;&#x5927;&#x91CF;&#x5185;&#x5B58;&#xFF0C;&#x5E76;&#x4E14;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;&#x5927;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x5916;&#x90E8;&#x5316;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x9009;&#x7528;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</p>
+<p>3)   &#x7528;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7801;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x6709;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7801;&#x6240;&#x6807;&#x8BC6;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x7528; HashMap/HashTable &#x5B58;&#x50A8;</p>
+<p>4)   &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x5927;&#x5927;&#x51CF;&#x5C11;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x964D;&#x4F4E;&#x4E86;&#x7A0B;&#x5E8F;&#x5185;&#x5B58;&#x7684;&#x5360;&#x7528;&#xFF0C;&#x63D0;&#x9AD8;&#x6548;&#x7387;</p>
+<p>5)   &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x63D0;&#x9AD8;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x9700;&#x8981;&#x5206;&#x79BB;&#x51FA;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5916;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x5916;&#x90E8;&#x72B6;&#x6001;&#x5177;&#x6709;&#x56FA;&#x5316;&#x7279;&#x6027;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x968F;&#x7740;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x7684;&#x6539;&#x53D8;&#x800C;&#x6539;&#x53D8;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5730;&#x65B9;.</p>
+<p>6)   &#x4F7F;&#x7528;&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x6CE8;&#x610F;&#x5212;&#x5206;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x548C;&#x5916;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x9700;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#x52A0;&#x4EE5;&#x63A7;&#x5236;&#x3002;</p>
+<p>7)   &#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#x7ECF;&#x5178;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x662F;&#x9700;&#x8981;&#x7F13;&#x51B2;&#x6C60;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x6BD4;&#x5982; String &#x5E38;&#x91CF;&#x6C60;&#x3001;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第13章 外观模式.html" class="navigation navigation-prev " aria-label="Previous page: 第13章 外观模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第15章 代理模式.html" class="navigation navigation-next " aria-label="Next page: 第15章 代理模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第14章 享元模式","level":"1.14","depth":1,"next":{"title":"第15章 代理模式","level":"1.15","depth":1,"path":"第15章 代理模式.md","ref":"第15章 代理模式.md","articles":[]},"previous":{"title":"第13章 外观模式","level":"1.13","depth":1,"path":"第13章 外观模式.md","ref":"第13章 外观模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第14章 享元模式.md","mtime":"2020-04-20T14:06:54.152Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

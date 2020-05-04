@@ -1,0 +1,825 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第7章 原型模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第8章 建造者模式.html" />
+    
+    
+    <link rel="prev" href="第6章 工厂设计模式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="seven principles.html">
+            
+                <a href="seven principles.html">
+            
+                    
+                    七大原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="UML类图.html">
+            
+                <a href="UML类图.html">
+            
+                    
+                    UML类图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第4章 设计模式概述.html">
+            
+                <a href="第4章 设计模式概述.html">
+            
+                    
+                    第4章 设计模式概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第5章 单例设计模式.html">
+            
+                <a href="第5章 单例设计模式.html">
+            
+                    
+                    第5章 单例设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="第6章 工厂设计模式.html">
+            
+                <a href="第6章 工厂设计模式.html">
+            
+                    
+                    第6章 工厂设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="第7章 原型模式.html">
+            
+                <a href="第7章 原型模式.html">
+            
+                    
+                    第7章 原型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="第8章 建造者模式.html">
+            
+                <a href="第8章 建造者模式.html">
+            
+                    
+                    第8章 建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="第9章 适配器模式.html">
+            
+                <a href="第9章 适配器模式.html">
+            
+                    
+                    第9章 适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="第10章 桥接模式.html">
+            
+                <a href="第10章 桥接模式.html">
+            
+                    
+                    第10章 桥接模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="第11章 装饰者模式.html">
+            
+                <a href="第11章 装饰者模式.html">
+            
+                    
+                    第11章 装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="第12章 组合模式.html">
+            
+                <a href="第12章 组合模式.html">
+            
+                    
+                    第12章 组合模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="第13章 外观模式.html">
+            
+                <a href="第13章 外观模式.html">
+            
+                    
+                    第13章 外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="第14章 享元模式.html">
+            
+                <a href="第14章 享元模式.html">
+            
+                    
+                    第14章 享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="第15章 代理模式.html">
+            
+                <a href="第15章 代理模式.html">
+            
+                    
+                    第15章 代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="第16章 模板模式.html">
+            
+                <a href="第16章 模板模式.html">
+            
+                    
+                    第16章 模板模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="第18章 访问者模式.html">
+            
+                <a href="第18章 访问者模式.html">
+            
+                    
+                    第18章 访问者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="第19章 迭代器模式.html">
+            
+                <a href="第19章 迭代器模式.html">
+            
+                    
+                    第19章 迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="第20章 观察者模式.html">
+            
+                <a href="第20章 观察者模式.html">
+            
+                    
+                    第20章 观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="第21章 中介者模式.html">
+            
+                <a href="第21章 中介者模式.html">
+            
+                    
+                    第21章 中介者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="第22章 备忘录模式.html">
+            
+                <a href="第22章 备忘录模式.html">
+            
+                    
+                    第22章 备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="第23章 解释器模式.html">
+            
+                <a href="第23章 解释器模式.html">
+            
+                    
+                    第23章 解释器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="第24章 状态模式.html">
+            
+                <a href="第24章 状态模式.html">
+            
+                    
+                    第24章 状态模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="第25章 策略模式.html">
+            
+                <a href="第25章 策略模式.html">
+            
+                    
+                    第25章 策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="第26章 职责链模式.html">
+            
+                <a href="第26章 职责链模式.html">
+            
+                    
+                    第26章 职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第7章 原型模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-7-&#x7AE0;-&#x539F;&#x578B;&#x6A21;&#x5F0F;">&#x7B2C; 7 &#x7AE0; &#x539F;&#x578B;&#x6A21;&#x5F0F;</h1>
+<h2 id="71------&#x514B;&#x9686;&#x7F8A;&#x95EE;&#x9898;">7.1      &#x514B;&#x9686;&#x7F8A;&#x95EE;&#x9898;</h2>
+<p>&#x73B0;&#x5728;&#x6709;&#x4E00;&#x53EA;&#x7F8A; tom&#xFF0C;&#x59D3;&#x540D;&#x4E3A;: tom, &#x5E74;&#x9F84;&#x4E3A;&#xFF1A;1&#xFF0C;&#x989C;&#x8272;&#x4E3A;&#xFF1A;&#x767D;&#x8272;&#xFF0C;&#x8BF7;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x521B;&#x5EFA;&#x548C; tom &#x7F8A; &#x5C5E;&#x6027;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684; 10</p>
+<p>&#x53EA;&#x7F8A;&#x3002;</p>
+<h2 id="72------&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x514B;&#x9686;&#x7F8A;&#x95EE;&#x9898;">7.2      &#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x514B;&#x9686;&#x7F8A;&#x95EE;&#x9898;</h2>
+<p>1)   &#x601D;&#x8DEF;&#x5206;&#x6790;(&#x56FE;&#x89E3;)</p>
+<p><img src="images/prototype1.jpg" alt="img"></p>
+<p>2)   &#x770B;&#x8001;&#x5E08;&#x4EE3;&#x7801;&#x7684;&#x6F14;&#x793A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.prototype;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-comment">//&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x6CD5;</span>
+        Sheep sheep = <span class="hljs-keyword">new</span> Sheep(<span class="hljs-string">&quot;tom&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x767D;&#x8272;&quot;</span>);
+
+        Sheep sheep2 = <span class="hljs-keyword">new</span> Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());
+        Sheep sheep3 = <span class="hljs-keyword">new</span> Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());
+        Sheep sheep4 = <span class="hljs-keyword">new</span> Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());
+        Sheep sheep5 = <span class="hljs-keyword">new</span> Sheep(sheep.getName(), sheep.getAge(), sheep.getColor());
+        <span class="hljs-comment">//....</span>
+
+        System.out.println(sheep);
+        System.out.println(sheep2);
+        System.out.println(sheep3);
+        System.out.println(sheep4);
+        System.out.println(sheep5);
+        <span class="hljs-comment">//...</span>
+    }
+
+}
+</code></pre>
+<h2 id="73------&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x4F18;&#x7F3A;&#x70B9;">7.3      &#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x4F18;&#x7F3A;&#x70B9;</h2>
+<p>1)   &#x4F18;&#x70B9;&#x662F;&#x6BD4;&#x8F83;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x7B80;&#x5355;&#x6613;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>2)   &#x5728;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x603B;&#x662F;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x83B7;&#x53D6;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x65F6;&#xFF0C;&#x6548;&#x7387;&#x8F83;&#x4F4E;</p>
+<p>3)   &#x603B;&#x662F;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x52A8;&#x6001;&#x5730;&#x83B7;&#x5F97;&#x5BF9;&#x8C61;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x72B6;&#x6001;, &#x4E0D;&#x591F;&#x7075;&#x6D3B;</p>
+<p>4)   &#x6539;&#x8FDB;&#x7684;&#x601D;&#x8DEF;&#x5206;&#x6790;</p>
+<p>&#x601D;&#x8DEF;&#xFF1A;Java &#x4E2D; Object &#x7C7B;&#x662F;&#x6240;&#x6709;&#x7C7B;&#x7684;&#x6839;&#x7C7B;&#xFF0C;Object &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A; clone()&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A; Java &#x5BF9;&#x8C61;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x5B9E;&#x73B0; clone &#x7684; Java &#x7C7B;&#x5FC5;&#x987B;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3; Cloneable&#xFF0C;&#x8BE5;&#x63A5;&#x53E3;&#x8868;&#x793A;&#x8BE5;&#x7C7B;&#x80FD;&#x591F;&#x590D;&#x5236;&#x4E14;&#x5177;&#x6709;&#x590D;&#x5236;&#x7684;&#x80FD;&#x529B; =&gt;&#x539F;&#x578B;&#x6A21;&#x5F0F;</p>
+<h2 id="74------&#x539F;&#x578B;&#x6A21;&#x5F0F;-&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">7.4      &#x539F;&#x578B;&#x6A21;&#x5F0F;-&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h2>
+<p>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</p>
+<p>1)    &#x539F;&#x578B;&#x6A21;&#x5F0F;(Prototype &#x6A21;&#x5F0F;)&#x662F;&#x6307;&#xFF1A;&#x7528;&#x539F;&#x578B;&#x5B9E;&#x4F8B;&#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x79CD;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x62F7;&#x8D1D;&#x8FD9;&#x4E9B;&#x539F;&#x578B;&#xFF0C;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;</p>
+<p>2)    &#x539F;&#x578B;&#x6A21;&#x5F0F;&#x662F;&#x4E00;&#x79CD;&#x521B;&#x5EFA;&#x578B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF0C;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x518D;&#x521B;&#x5EFA;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x53EF;&#x5B9A;&#x5236;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x65E0;&#x9700;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x7684;&#x7EC6;&#x8282;</p>
+<p>3)    &#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x662F;:&#x901A;&#x8FC7;&#x5C06;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#x4F20;&#x7ED9;&#x90A3;&#x4E2A;&#x8981;&#x53D1;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E2A;&#x8981;&#x53D1;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x901A;&#x8FC7;&#x8BF7;&#x6C42;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#x62F7;&#x8D1D;&#x5B83;&#x4EEC;&#x81EA;&#x5DF1;&#x6765;&#x5B9E;&#x65BD;&#x521B;&#x5EFA;&#xFF0C;&#x5373; &#x5BF9;&#x8C61;<strong>.clone</strong>()</p>
+<p>4)    &#x5F62;&#x8C61;&#x7684;&#x7406;&#x89E3;&#xFF1A;&#x5B59;&#x5927;&#x5723;&#x62D4;&#x51FA;&#x7334;&#x6BDB;&#xFF0C; &#x53D8;&#x51FA;&#x5176;&#x5B83;&#x5B59;&#x5927;&#x5723;</p>
+<h2 id="75------&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x7ED3;&#x6784;&#x56FE;-uml-&#x7C7B;&#x56FE;">7.5      &#x539F;&#x578B;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x7ED3;&#x6784;&#x56FE;-uml &#x7C7B;&#x56FE;</h2>
+<p> <img src="images/prototype2.jpg" alt="img"></p>
+<p>&#xD8; &#x539F;&#x7406;&#x7ED3;&#x6784;&#x56FE;&#x8BF4;&#x660E;</p>
+<p>1)    Prototype : &#x539F;&#x578B;&#x7C7B;&#xFF0C;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x514B;&#x9686;&#x81EA;&#x5DF1;&#x7684;&#x63A5;&#x53E3;</p>
+<p>2)    ConcretePrototype: &#x5177;&#x4F53;&#x7684;&#x539F;&#x578B;&#x7C7B;, &#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x514B;&#x9686;&#x81EA;&#x5DF1;&#x7684;&#x64CD;&#x4F5C;</p>
+<p>3)    Client: &#x8BA9;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#x514B;&#x9686;&#x81EA;&#x5DF1;&#xFF0C;&#x4ECE;&#x800C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;(&#x5C5E;&#x6027;&#x4E00;&#x6837;&#xFF09;</p>
+<h2 id="76------&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x514B;&#x9686;&#x7F8A;&#x95EE;&#x9898;&#x7684;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;">7.6      &#x539F;&#x578B;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x514B;&#x9686;&#x7F8A;&#x95EE;&#x9898;&#x7684;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;</h2>
+<p>&#x4F7F;&#x7528;&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x6539;&#x8FDB;&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#xFF0C;&#x8BA9;&#x7A0B;&#x5E8F;&#x5177;&#x6709;&#x66F4;&#x9AD8;&#x7684;&#x6548;&#x7387;&#x548C;&#x6269;&#x5C55;&#x6027;&#x3002;</p>
+<p>&#xD8; &#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.prototype.improve;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sheep</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span> </span>{
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">private</span> String color;
+    <span class="hljs-keyword">private</span> String address = <span class="hljs-string">&quot;&#x8499;&#x53E4;&#x7F8A;&quot;</span>;
+    <span class="hljs-keyword">public</span> Sheep friend; <span class="hljs-comment">//&#x662F;&#x5BF9;&#x8C61;, &#x514B;&#x9686;&#x662F;&#x4F1A;&#x5982;&#x4F55;&#x5904;&#x7406;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Sheep</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age, String color)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.age = age;
+        <span class="hljs-keyword">this</span>.color = color;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> name;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> age;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> age)</span> </span>{
+        <span class="hljs-keyword">this</span>.age = age;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getColor</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> color;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setColor</span><span class="hljs-params">(String color)</span> </span>{
+        <span class="hljs-keyword">this</span>.color = color;
+    }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Sheep [name=&quot;</span> + name + <span class="hljs-string">&quot;, age=&quot;</span> + age + <span class="hljs-string">&quot;, color=&quot;</span> + color + <span class="hljs-string">&quot;, address=&quot;</span> + address + <span class="hljs-string">&quot;]&quot;</span>;
+    }
+    <span class="hljs-comment">//&#x514B;&#x9686;&#x8BE5;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;clone&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> Object <span class="hljs-title">clone</span><span class="hljs-params">()</span>  </span>{
+        Sheep sheep = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">try</span> {
+            sheep = (Sheep)<span class="hljs-keyword">super</span>.clone();
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+            System.out.println(e.getMessage());
+        }
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> sheep;
+    }
+}
+
+
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x5B8C;&#x6210;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&quot;</span>);
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        Sheep sheep = <span class="hljs-keyword">new</span> Sheep(<span class="hljs-string">&quot;tom&quot;</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x767D;&#x8272;&quot;</span>);
+
+        sheep.friend = <span class="hljs-keyword">new</span> Sheep(<span class="hljs-string">&quot;jack&quot;</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x9ED1;&#x8272;&quot;</span>);
+
+        Sheep sheep2 = (Sheep)sheep.clone(); <span class="hljs-comment">//&#x514B;&#x9686;</span>
+        Sheep sheep3 = (Sheep)sheep.clone(); <span class="hljs-comment">//&#x514B;&#x9686;</span>
+        Sheep sheep4 = (Sheep)sheep.clone(); <span class="hljs-comment">//&#x514B;&#x9686;</span>
+        Sheep sheep5 = (Sheep)sheep.clone(); <span class="hljs-comment">//&#x514B;&#x9686;</span>
+
+        System.out.println(<span class="hljs-string">&quot;sheep2 =&quot;</span> + sheep2 + <span class="hljs-string">&quot;sheep2.friend=&quot;</span> + sheep2.friend.hashCode());
+        System.out.println(<span class="hljs-string">&quot;sheep3 =&quot;</span> + sheep3 + <span class="hljs-string">&quot;sheep3.friend=&quot;</span> + sheep3.friend.hashCode());
+        System.out.println(<span class="hljs-string">&quot;sheep4 =&quot;</span> + sheep4 + <span class="hljs-string">&quot;sheep4.friend=&quot;</span> + sheep4.friend.hashCode());
+        System.out.println(<span class="hljs-string">&quot;sheep5 =&quot;</span> + sheep5 + <span class="hljs-string">&quot;sheep5.friend=&quot;</span> + sheep5.friend.hashCode());
+    }
+
+}
+</code></pre>
+<h2 id="77------&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x5728;-spring-&#x6846;&#x67B6;&#x4E2D;&#x6E90;&#x7801;&#x5206;&#x6790;">7.7      &#x539F;&#x578B;&#x6A21;&#x5F0F;&#x5728; Spring &#x6846;&#x67B6;&#x4E2D;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p>1)   Spring &#x4E2D;&#x539F;&#x578B; bean &#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x5C31;&#x662F;&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;</p>
+<p>2)   &#x4EE3;&#x7801;&#x5206;&#x6790;+Debug &#x6E90;&#x7801;</p>
+<p><img src="F:\gitbook-demo\images\prototype3.jpg" alt="img"></p>
+<h2 id="78------&#x6DF1;&#x5165;&#x8BA8;&#x8BBA;-&#x6D45;&#x62F7;&#x8D1D;&#x548C;&#x6DF1;&#x62F7;&#x8D1D;">7.8      &#x6DF1;&#x5165;&#x8BA8;&#x8BBA;-&#x6D45;&#x62F7;&#x8D1D;&#x548C;&#x6DF1;&#x62F7;&#x8D1D;</h2>
+<h3 id="781-&#x6D45;&#x62F7;&#x8D1D;&#x7684;&#x4ECB;&#x7ECD;">7.8.1 &#x6D45;&#x62F7;&#x8D1D;&#x7684;&#x4ECB;&#x7ECD;</h3>
+<p>1)  &#x5BF9;&#x4E8E;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x6D45;&#x62F7;&#x8D1D;&#x4F1A;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x503C;&#x4F20;&#x9012;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5C06;&#x8BE5;&#x5C5E;&#x6027;&#x503C;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x7ED9;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>2)  &#x5BF9;&#x4E8E;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x662F;&#x67D0;&#x4E2A;&#x6570;&#x7EC4;&#x3001;&#x67D0;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x6D45;&#x62F7;&#x8D1D;&#x4F1A;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x4F20;&#x9012;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x662F;&#x5C06;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;&#x503C;&#xFF08;&#x5185;&#x5B58;&#x5730;&#x5740;&#xFF09;&#x590D;&#x5236;&#x4E00;&#x4EFD;&#x7ED9;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x56E0;&#x4E3A;&#x5B9E;&#x9645;&#x4E0A;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x90FD;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E2D;&#x4FEE;&#x6539;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x503C;</p>
+<p>3)  &#x524D;&#x9762;&#x6211;&#x4EEC;&#x514B;&#x9686;&#x7F8A;&#x5C31;&#x662F;&#x6D45;&#x62F7;&#x8D1D;</p>
+<p>4)  &#x6D45;&#x62F7;&#x8D1D;&#x662F;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684; clone()&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;</p>
+<p>sheep = (Sheep) super.clone();</p>
+<h3 id="782-&#x6DF1;&#x62F7;&#x8D1D;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;">7.8.2 &#x6DF1;&#x62F7;&#x8D1D;&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h3>
+<p>1)   &#x590D;&#x5236;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x503C;</p>
+<p>2)   &#x4E3A;&#x6240;&#x6709;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7533;&#x8BF7;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x5E76;&#x590D;&#x5236;&#x6BCF;&#x4E2A;&#x5F15;&#x7528;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x76F4;&#x5230;&#x8BE5;&#x5BF9;&#x8C61;&#x53EF;&#x8FBE;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x6DF1;&#x62F7;&#x8D1D;&#x8981;&#x5BF9;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;<strong>(</strong>&#x5305;&#x62EC;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;<strong>)</strong>&#x8FDB;&#x884C;&#x62F7;&#x8D1D;</p>
+<p>3)   &#x6DF1;&#x62F7;&#x8D1D;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F; 1&#xFF1A;&#x91CD;&#x5199; <strong>clone</strong> &#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;</p>
+<p>4)   &#x6DF1;&#x62F7;&#x8D1D;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F; 2&#xFF1A;&#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;(&#x63A8;&#x8350;)</p>
+<h2 id="79------&#x6DF1;&#x62F7;&#x8D1D;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;">7.9      &#x6DF1;&#x62F7;&#x8D1D;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;</h2>
+<p>1)   &#x4F7F;&#x7528; &#x91CD;&#x5199; clone &#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;</p>
+<p>2)   &#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x5316;&#x6765;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;</p>
+<p>3)   &#x4EE3;&#x7801;&#x6F14;&#x793A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.atguigu.prototype.deepclone;
+<span class="hljs-keyword">import</span> java.io.ByteArrayInputStream;
+<span class="hljs-keyword">import</span> java.io.ByteArrayOutputStream;
+<span class="hljs-keyword">import</span> java.io.ObjectInputStream;
+<span class="hljs-keyword">import</span> java.io.ObjectOutputStream;
+<span class="hljs-keyword">import</span> java.io.Serializable;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeepProtoType</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span>, <span class="hljs-title">Cloneable</span></span>{
+
+    <span class="hljs-keyword">public</span> String name; <span class="hljs-comment">//String &#x5C5E;&#x6027;</span>
+    <span class="hljs-keyword">public</span> DeepCloneableTarget deepCloneableTarget;<span class="hljs-comment">// &#x5F15;&#x7528;&#x7C7B;&#x578B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DeepProtoType</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>();
+    }
+
+
+    <span class="hljs-comment">//&#x6DF1;&#x62F7;&#x8D1D; - &#x65B9;&#x5F0F; 1 &#x4F7F;&#x7528;clone &#x65B9;&#x6CD5;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> Object <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException </span>{
+
+        Object deep = <span class="hljs-keyword">null</span>;
+        <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x5B8C;&#x6210;&#x5BF9;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;(&#x5C5E;&#x6027;)&#x548C;String&#x7684;&#x514B;&#x9686;</span>
+        deep = <span class="hljs-keyword">super</span>.clone();
+        <span class="hljs-comment">//&#x5BF9;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FDB;&#x884C;&#x5355;&#x72EC;&#x5904;&#x7406;</span>
+        DeepProtoType deepProtoType = (DeepProtoType)deep;
+        deepProtoType.deepCloneableTarget  = (DeepCloneableTarget)deepCloneableTarget.clone();
+
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> deepProtoType;
+    }
+
+    <span class="hljs-comment">//&#x6DF1;&#x62F7;&#x8D1D; - &#x65B9;&#x5F0F;2 &#x901A;&#x8FC7;&#x5BF9;&#x8C61;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0; (&#x63A8;&#x8350;)</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">deepClone</span><span class="hljs-params">()</span> </span>{
+
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x6D41;&#x5BF9;&#x8C61;</span>
+        ByteArrayOutputStream bos = <span class="hljs-keyword">null</span>;
+        ObjectOutputStream oos = <span class="hljs-keyword">null</span>;
+        ByteArrayInputStream bis = <span class="hljs-keyword">null</span>;
+        ObjectInputStream ois = <span class="hljs-keyword">null</span>;
+
+        <span class="hljs-keyword">try</span> {
+
+            <span class="hljs-comment">//&#x5E8F;&#x5217;&#x5316;</span>
+            bos = <span class="hljs-keyword">new</span> ByteArrayOutputStream();
+            oos = <span class="hljs-keyword">new</span> ObjectOutputStream(bos);
+            oos.writeObject(<span class="hljs-keyword">this</span>); <span class="hljs-comment">//&#x5F53;&#x524D;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x4EE5;&#x5BF9;&#x8C61;&#x6D41;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;</span>
+
+            <span class="hljs-comment">//&#x53CD;&#x5E8F;&#x5217;&#x5316;</span>
+            bis = <span class="hljs-keyword">new</span> ByteArrayInputStream(bos.toByteArray());
+            ois = <span class="hljs-keyword">new</span> ObjectInputStream(bis);
+            DeepProtoType copyObj = (DeepProtoType)ois.readObject();
+
+            <span class="hljs-keyword">return</span> copyObj;
+
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+            e.printStackTrace();
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-comment">//&#x5173;&#x95ED;&#x6D41;</span>
+            <span class="hljs-keyword">try</span> {
+                bos.close();
+                oos.close();
+                bis.close();
+                ois.close();
+            } <span class="hljs-keyword">catch</span> (Exception e2) {
+                <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+                System.out.println(e2.getMessage());
+            }
+        }
+
+    }
+
+}
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeepCloneableTarget</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span>, <span class="hljs-title">Cloneable</span> </span>{
+
+    <span class="hljs-comment">/**
+     *
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">1L</span>;
+
+    <span class="hljs-keyword">private</span> String cloneName;
+
+    <span class="hljs-keyword">private</span> String cloneClass;
+
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DeepCloneableTarget</span><span class="hljs-params">(String cloneName, String cloneClass)</span> </span>{
+        <span class="hljs-keyword">this</span>.cloneName = cloneName;
+        <span class="hljs-keyword">this</span>.cloneClass = cloneClass;
+    }
+
+    <span class="hljs-comment">//&#x56E0;&#x4E3A;&#x8BE5;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90FD;&#x662F;String , &#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;clone&#x5B8C;&#x6210;&#x5373;&#x53EF;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> Object <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.clone();
+    }
+}
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        DeepProtoType p = <span class="hljs-keyword">new</span> DeepProtoType();
+        p.name = <span class="hljs-string">&quot;&#x5B8B;&#x6C5F;&quot;</span>;
+        p.deepCloneableTarget = <span class="hljs-keyword">new</span> DeepCloneableTarget(<span class="hljs-string">&quot;&#x5927;&#x725B;&quot;</span>, <span class="hljs-string">&quot;&#x5C0F;&#x725B;&quot;</span>);
+
+        <span class="hljs-comment">//&#x65B9;&#x5F0F;1 &#x5B8C;&#x6210;&#x6DF1;&#x62F7;&#x8D1D;</span>
+
+<span class="hljs-comment">//        DeepProtoType p2 = (DeepProtoType) p.clone();</span>
+<span class="hljs-comment">//        </span>
+<span class="hljs-comment">//        System.out.println(&quot;p.name=&quot; + p.name + &quot;p.deepCloneableTarget=&quot; + p.deepCloneableTarget.hashCode());</span>
+<span class="hljs-comment">//        System.out.println(&quot;p2.name=&quot; + p.name + &quot;p2.deepCloneableTarget=&quot; + p2.deepCloneableTarget.hashCode());</span>
+
+        <span class="hljs-comment">//&#x65B9;&#x5F0F;2 &#x5B8C;&#x6210;&#x6DF1;&#x62F7;&#x8D1D;</span>
+        DeepProtoType p2 = (DeepProtoType) p.deepClone();
+
+        System.out.println(<span class="hljs-string">&quot;p.name=&quot;</span> + p.name + <span class="hljs-string">&quot;p.deepCloneableTarget=&quot;</span> + p.deepCloneableTarget.hashCode());
+        System.out.println(<span class="hljs-string">&quot;p2.name=&quot;</span> + p.name + <span class="hljs-string">&quot;p2.deepCloneableTarget=&quot;</span> + p2.deepCloneableTarget.hashCode());
+
+    }
+}
+</code></pre>
+<h2 id="710----&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;">7.10    &#x539F;&#x578B;&#x6A21;&#x5F0F;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x548C;&#x7EC6;&#x8282;</h2>
+<p>1)   &#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x539F;&#x578B;&#x6A21;&#x5F0F;&#x7B80;&#x5316;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x80FD;&#x591F;&#x63D0;&#x9AD8;&#x6548;&#x7387;</p>
+<p>2)   &#x4E0D;&#x7528;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x52A8;&#x6001;&#x5730;&#x83B7;&#x5F97;&#x5BF9;&#x8C61;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x72B6;&#x6001;</p>
+<p>3)   &#x5982;&#x679C;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x53D1;&#x751F;&#x53D8;&#x5316;(&#x589E;&#x52A0;&#x6216;&#x8005;&#x51CF;&#x5C11;&#x5C5E;&#x6027;)&#xFF0C;&#x5176;&#x5B83;&#x514B;&#x9686;&#x5BF9;&#x8C61;&#x7684;&#x4E5F;&#x4F1A;&#x53D1;&#x751F;&#x76F8;&#x5E94;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x65E0;&#x9700;&#x4FEE;&#x6539;&#x4EE3;&#x7801;</p>
+<p>4)   &#x5728;&#x5B9E;&#x73B0;&#x6DF1;&#x514B;&#x9686;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x4EE3;&#x7801;</p>
+<p>5)   &#x7F3A;&#x70B9;&#xFF1A;&#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x7C7B;&#x914D;&#x5907;&#x4E00;&#x4E2A;&#x514B;&#x9686;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x5BF9;&#x5168;&#x65B0;&#x7684;&#x7C7B;&#x6765;&#x8BF4;&#x4E0D;&#x662F;&#x5F88;&#x96BE;&#xFF0C;&#x4F46;&#x5BF9;&#x5DF2;&#x6709;&#x7684;&#x7C7B;&#x8FDB;&#x884C;&#x6539;&#x9020;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5176;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x8FDD;&#x80CC;&#x4E86; ocp &#x539F;&#x5219;&#xFF0C;&#x8FD9;&#x70B9;&#x8BF7;&#x540C;&#x5B66;&#x4EEC;&#x6CE8;&#x610F;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第6章 工厂设计模式.html" class="navigation navigation-prev " aria-label="Previous page: 第6章 工厂设计模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="第8章 建造者模式.html" class="navigation navigation-next " aria-label="Next page: 第8章 建造者模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第7章 原型模式","level":"1.7","depth":1,"next":{"title":"第8章 建造者模式","level":"1.8","depth":1,"path":"第8章 建造者模式.md","ref":"第8章 建造者模式.md","articles":[]},"previous":{"title":"第6章 工厂设计模式","level":"1.6","depth":1,"path":"第6章 工厂设计模式.md","ref":"第6章 工厂设计模式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"第7章 原型模式.md","mtime":"2020-04-14T08:15:16.939Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T07:24:14.474Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
