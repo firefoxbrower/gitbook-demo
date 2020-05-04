@@ -807,7 +807,6 @@ for (CollegeEmployee e : list1) {
 System.out.println(e.getId());}
 }
 }
-
 //学校管理类
 //分析 SchoolManager 类的直接朋友类有哪些 Employee、CollegeManager
 //CollegeEmployee 不是 直接朋友 而是一个陌生类，这样违背了 迪米特法则
@@ -858,6 +857,3 @@ System.out.println(e.getId());}
 2)    针对接口编程，而不是针对实现编程。
 
 3)    为了交互对象之间的松耦合设计而努力
-
-
-
